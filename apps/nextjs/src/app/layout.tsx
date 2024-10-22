@@ -2,24 +2,14 @@ import type { Metadata, Viewport } from "next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 
-
-
 import { cn } from "@acme/ui";
-import { ThemeProvider, ThemeToggle } from "@acme/ui/theme";
-import { Toaster } from "@acme/ui/toast";
-
-
-
-import { TRPCReactProvider } from "~/trpc/react";
-
-
 
 import "~/styles/globals.css";
 
 
-
+import { MainNav } from "~/components/nav-bar";
 import { env } from "~/env";
-
+import Providers from "./_components/providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -53,9 +43,13 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout(props: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en"   suppressHydrationWarning={true}>
       <body
         className={cn(
           "min-h-screen bg-background font-sans text-foreground antialiased",
@@ -63,13 +57,14 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           GeistMono.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TRPCReactProvider>{props.children}</TRPCReactProvider>
-          <div className="absolute bottom-4 right-4">
-            <ThemeToggle />
-          </div>
-          <Toaster />
-        </ThemeProvider>
+        <Providers>
+
+            <MainNav />
+          <main className="mx-auto max-w-screen-2xl">
+            {children}
+
+          </main>
+        </Providers>
       </body>
     </html>
   );
