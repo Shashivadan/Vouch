@@ -1,5 +1,5 @@
 {
-  "name": "create-t3-turbo",
+  "name": "vouch",
   "private": true,
   "engines": {
     "node": ">=20.16.0",
@@ -12,6 +12,7 @@
     "clean:workspaces": "turbo run clean",
     "db:push": "turbo -F @acme/db push",
     "db:studio": "turbo -F @acme/db studio",
+    "db:migrate": "turbo -F @acme/db migrate",
     "dev": "turbo watch dev --continue",
     "dev:next": "turbo watch dev -F @acme/nextjs...",
     "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
@@ -27,7 +28,7 @@
     "@acme/prettier-config": "workspace:*",
     "@turbo/gen": "^2.1.3",
     "prettier": "catalog:",
-    "turbo": "^2.1.3",
+    "turbo": "^2.2.3",
     "typescript": "catalog:"
   },
   "prettier": "@acme/prettier-config"
