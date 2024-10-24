@@ -1,34 +1,18 @@
 "use client";
 
-import * as React from "react";
-import { ThemeProvider, useTheme } from "next-themes";
-
+import React from "react";
 import { cn } from "@acme/ui";
 
-function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
 
-  // Prevent hydration mismatch by only rendering after mount
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
 
-  if (!mounted) {
-    return (
-      <button
-        className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md border border-neutral-500/10 bg-white px-2 py-1 font-medium tracking-tight text-neutral-600"
-        type="button"
-      >
-        <span className="relative size-6 scale-75 rounded-full" />
-      </button>
-    );
-  }
 
+
+export const ToggleTheme = () => {
+  const [theme, setTheme] = React.useState<"light" | "dark">("light");
   return (
     <button
       className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md border border-neutral-500/10 bg-white px-2 py-1 font-medium tracking-tight text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={() => setTheme((prev) => (prev === "light" ? "dark" : "light"))}
       type="button"
     >
       <span
@@ -55,8 +39,7 @@ function ThemeToggle() {
           )}
         />
       </span>
+     
     </button>
   );
-}
-
-export { ThemeProvider, ThemeToggle };
+};

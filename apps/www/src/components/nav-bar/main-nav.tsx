@@ -2,9 +2,15 @@ import React from "react";
 import Image from "next/image";
 import icon from "public/icons/icon.svg";
 
+
+
 import { Button } from "@acme/ui/button";
+import { ThemeToggle } from "@acme/ui/theme";
+
+
 
 import Beta from "./beta";
+
 
 export function MainNav() {
   return (
@@ -28,12 +34,16 @@ export function MainNav() {
               <Beta />
             </div>
           </div>
-          <Button
-            variant="link"
-            className="inline rounded-md bg-purple-500/15 px-4 py-1 text-sm font-medium text-purple-500 hover:bg-purple-600/10 hover:text-purple-500 border0-none"
-          >
-            Login
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="link"
+              className="border0-none inline rounded-md bg-purple-500/15 px-4 py-1 text-sm font-medium text-purple-500 hover:bg-purple-600/10 hover:text-purple-500"
+            >
+              Login
+            </Button>
+
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </>

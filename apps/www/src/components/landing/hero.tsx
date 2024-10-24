@@ -1,68 +1,52 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+
+import { Button } from "@acme/ui/button";
+
+import MordranAnimatedButton from "../mordran-animted-button";
+import HeroWapper from "./hero-wapper";
 
 export default function Hero() {
-  const glowVariants = {
-    initial: { scale: 0.8, opacity: 0.5 },
-    animate: {
-      scale: [0.8, 1, 0.8],
-      opacity: [0.5, 0.8, 0.5],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const floatVariants = {
-    initial: { y: 0 },
-    animate: {
-      y: [-20, 20, -20],
-      transition: {
-        duration: 5,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
-    <div className="relative h-svh">
-      <motion.div
-        variants={glowVariants}
-        initial="initial"
-        animate="animate"
-        className="absolute top-28 -z-10 h-72 w-72"
-      >
-        <motion.div
-          variants={floatVariants}
-          initial="initial"
-          animate="animate"
-          className="h-full w-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 blur-[200px]"
-        />
-      </motion.div>
-      <motion.div
-        variants={glowVariants}
-        initial="initial"
-        animate="animate"
-        className="absolute bottom-28 right-0 -z-10 h-72 w-72"
-      >
-        <motion.div
-          variants={floatVariants}
-          initial="initial"
-          animate="animate"
-          className="h-full w-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 blur-[200px]"
-        />
-      </motion.div>
-
-      <div className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 lg:py-16">
-        <div className="inline-block max-w-sm lg:max-w-4xl text-center justify-center text-2xl tracking-tight  font-semibold">
-        <h1>Turn Happy Customers into Powerful Stories</h1>
-      </div>
-      </div>
-    </div>
+    <>
+      <HeroWapper>
+        <div>
+          <div className="h-full w-full p-6">
+            <div className="mt-48 flex flex-col items-center justify-center">
+              <div className="flex w-full max-w-7xl flex-col items-center gap-2 md:gap-3">
+                <div className=" ">
+                  <MordranAnimatedButton />
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                  <h1 className="text-center text-2xl font-semibold tracking-tight sm:text-3xl md:w-[70%] md:text-4xl lg:text-6xl">
+                    Turn Happy{" "}
+                    <span className="inline bg-gradient-to-b from-[#FF1CF7] to-[#b249f8] bg-clip-text font-semibold tracking-tight text-transparent">
+                      Customers
+                    </span>{" "}
+                    into Powerful Stories
+                  </h1>
+                </div>
+                <div className="max-w-xl text-center text-sm text-zinc-400 sm:text-base lg:text-lg">
+                  From happy customers to powerful testimonials in minutes.
+                </div>
+                <div className="flex items-center justify-center gap-3">
+                  <Button size="lg" className="rounded-full">
+                    Get Started
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="rounded-full border-2 text-zinc-400 dark:border-zinc-700 hover:dark:bg-zinc-800"
+                  >
+                    GitHub
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </HeroWapper>
+    </>
   );
 }
