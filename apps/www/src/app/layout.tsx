@@ -6,7 +6,6 @@ import { cn } from "@acme/ui";
 
 import "~/styles/globals.css";
 
-
 import { MainNav } from "~/components/nav-bar";
 import { env } from "~/env";
 import Providers from "./_components/providers";
@@ -49,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en"   suppressHydrationWarning={true}>
+    <html lang="en" suppressHydrationWarning={true}>
       <body
         className={cn(
           "min-h-screen bg-background font-sans text-foreground antialiased",
@@ -58,12 +57,8 @@ export default function RootLayout({
         )}
       >
         <Providers>
-
-            <MainNav />
-          <main className="mx-auto max-w-screen-2xl">
-            {children}
-
-          </main>
+          <MainNav />
+          <main className="mx-auto max-w-screen-2xl">{children}</main>
         </Providers>
       </body>
     </html>

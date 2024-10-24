@@ -1,6 +1,10 @@
 "use client";
 
-
+const links = [
+  { name: "About", href: "#0" },
+  { name: "Terms", href: "#0" },
+  { name: "Privacy", href: "#0" },
+];
 
 export default function Footer() {
   return (
@@ -9,24 +13,15 @@ export default function Footer() {
         <div className="flex flex-col items-center py-8 md:flex-row md:justify-between">
           {/* Links */}
           <div className="mb-4 flex space-x-6 md:mb-0">
-            <a
-              className="text-gray-600 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-              href="#0"
-            >
-              About
-            </a>
-            <a
-              className="text-gray-600 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-              href="#0"
-            >
-              Terms
-            </a>
-            <a
-              className="text-gray-600 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-              href="#0"
-            >
-              Privacy
-            </a>
+            {links.map((link) => (
+              <a
+                key={link.name}
+                className="text-gray-600 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
+                href="#0"
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
 
           {/* Social + Copyright */}
