@@ -9,10 +9,10 @@ export default function Features() {
           <span className="mb-3 inline-block text-purple-400">
             Advanced Controls
           </span>
-          <h2 className="mb-4 text-3xl font-semibold  md:text-4xl">
+          <h2 className="mb-4 text-3xl font-semibold md:text-4xl">
             Built for modern product teams
           </h2>
-          <p className="text-lg ">
+          <p className="text-lg">
             Open AI reads and understands your files, with nothing more than a
             single line of feedback, so you can go further than the speed of
             thought.
@@ -30,12 +30,8 @@ export default function Features() {
               >
                 {feature.icon}
               </svg>
-              <h3 className="text-lg font-semibold ">
-                {feature.title}
-              </h3>
-              <p className="text-sm">
-                {feature.discription}
-              </p>
+              <h3 className="text-lg font-semibold">{feature.title}</h3>
+              <p className="text-sm">{feature.discription}</p>
             </article>
           ))}
         </div>

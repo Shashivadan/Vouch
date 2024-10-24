@@ -79,7 +79,7 @@ export default function HeroWapper({
           className="absolute h-full w-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 blur-[100px] sm:blur-[150px] lg:blur-[200px]"
         />
       </motion.div>
-      <div className="absolute  hidden md:block -z-50 h-full w-full">
+      <div className="absolute -z-50 hidden h-full w-full md:block">
         <motion.div
           initial="initial"
           animate="animate"
@@ -90,7 +90,7 @@ export default function HeroWapper({
             alt="Mordran"
             width={120}
             height={120}
-            className=" md:absolute md:left-[6rem] md:top-[2rem] lg:left-[7rem] lg:top-[6rem]"
+            className="md:absolute md:left-[6rem] md:top-[2rem] lg:left-[7rem] lg:top-[6rem]"
           />
         </motion.div>
         <motion.div
@@ -103,7 +103,7 @@ export default function HeroWapper({
             alt="Mordran"
             width={120}
             height={120}
-            className=" md:absolute md:left-[6rem] md:top-[12rem] lg:left-[15rem] lg:top-[30rem]"
+            className="md:absolute md:left-[6rem] md:top-[12rem] lg:left-[15rem] lg:top-[30rem]"
           />
         </motion.div>
         <motion.div
@@ -116,7 +116,7 @@ export default function HeroWapper({
             alt="Mordran"
             width={120}
             height={120}
-            className=" md:absolute md:left-[36rem] md:top-[12rem] lg:left-[79rem] lg:top-[6rem]"
+            className="md:absolute md:left-[36rem] md:top-[12rem] lg:left-[79rem] lg:top-[6rem]"
           />
         </motion.div>
         <motion.div
@@ -129,7 +129,7 @@ export default function HeroWapper({
             alt="Mordran"
             width={120}
             height={120}
-            className="  md:absolute md:left-[36rem] md:top-[12rem] lg:left-[70rem] lg:top-[30rem]"
+            className="md:absolute md:left-[36rem] md:top-[12rem] lg:left-[70rem] lg:top-[30rem]"
           />
         </motion.div>
       </div>

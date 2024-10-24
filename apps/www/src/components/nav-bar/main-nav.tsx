@@ -2,15 +2,10 @@ import React from "react";
 import Image from "next/image";
 import icon from "public/icons/icon.svg";
 
-
-
 import { Button } from "@acme/ui/button";
 import { ThemeToggle } from "@acme/ui/theme";
 
-
-
 import Beta from "./beta";
-
 
 export function MainNav() {
   return (
