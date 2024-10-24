@@ -1,9 +1,5 @@
-import { Separator } from "@acme/ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "@acme/ui/card";
-
-
-
-
+import { Separator } from "@acme/ui/separator";
 
 export default function PrivacyPage() {
   const sections = [

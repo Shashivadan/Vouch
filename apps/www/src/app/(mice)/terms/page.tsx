@@ -62,7 +62,7 @@ export default function Page() {
       <Separator className="my-8" />
 
       <p className="text-center text-sm text-gray-600">
-        Last updated:  {new Date().toLocaleDateString()}
+        Last updated: {new Date().toLocaleDateString()}
       </p>
     </div>
   );

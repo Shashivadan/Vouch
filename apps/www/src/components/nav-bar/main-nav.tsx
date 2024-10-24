@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import icon from "public/icons/icon.svg";
 
 import { Button } from "@acme/ui/button";
@@ -16,16 +17,20 @@ export function MainNav() {
             <div className="flex items-center justify-center gap-2">
               {icon && (
                 <>
-                  <Image
-                    src={icon as string}
-                    width={30}
-                    height={30}
-                    alt="Vouch"
-                    className="h-7 w-7 dark:invert"
-                  />
+                  <Link href="/">
+                    <Image
+                      src={icon as string}
+                      width={30}
+                      height={30}
+                      alt="Vouch"
+                      className="h-7 w-7 dark:invert"
+                    />
+                  </Link>
                 </>
               )}
-              <p className="text-2xl font-bold">Vouch</p>
+              <Link href="/">
+                <p className="text-2xl font-bold">Vouch</p>
+              </Link>
               <Beta />
             </div>
           </div>

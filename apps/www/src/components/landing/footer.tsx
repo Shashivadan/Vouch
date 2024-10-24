@@ -58,8 +58,8 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <div className="ext-sm text-gray-600 dark:text-gray-400">
-              © 2024 Your Company. All rights reserved.
+            <div className="text-sm text-gray-600 dark:text-gray-400">
+              © 2024 Vouch. All rights reserved.
             </div>
           </div>
         </div>
