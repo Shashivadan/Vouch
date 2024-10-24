@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
+
 const links = [
-  { name: "About", href: "#0" },
-  { name: "Terms", href: "#0" },
-  { name: "Privacy", href: "#0" },
+  { name: "About", href: "/about" },
+  { name: "Terms", href: "/terms" },
+  { name: "Privacy", href: "/privacy" },
 ];
 
 export default function Footer() {
@@ -14,13 +16,13 @@ export default function Footer() {
           {/* Links */}
           <div className="mb-4 flex space-x-6 md:mb-0">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 className="text-gray-600 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-                href="#0"
+                href={link.href}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -29,7 +31,8 @@ export default function Footer() {
             <div className="flex space-x-4">
               <a
                 className="text-gray-600 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-                href="#0"
+                href="https://x.com/home"
+                target="_blank"
                 aria-label="Twitter"
               >
                 <svg
@@ -42,7 +45,8 @@ export default function Footer() {
               </a>
               <a
                 className="text-gray-600 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-                href="#0"
+                href="https://github.com/Shashivadan/Vouch"
+                target="_blank"
                 aria-label="Github"
               >
                 <svg
