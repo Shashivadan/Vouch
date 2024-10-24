@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col items-center py-8 md:flex-row md:justify-between">
           {/* Links */}
-          <div className="mb-4 flex space-x-6 md:mb-0">
+          <div className="mb-4 flex  text-sm space-x-6 md:mb-0">
             {links.map((link) => (
               <Link
                 key={link.name}
@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="flex space-x-4">
               <a
                 className="text-gray-600 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-                href="https://x.com/home"
+                href="https://x.com/shashivadan99"
                 target="_blank"
                 aria-label="Twitter"
               >

@@ -7,6 +7,7 @@ import { Button } from "@acme/ui/button";
 import MordranAnimatedButton from "../mordran-animted-button";
 import HeroWapper from "./hero-wapper";
 
+
 export default function Hero() {
   return (
     <>
@@ -37,9 +38,13 @@ export default function Hero() {
                   <Button
                     variant="outline"
                     size="lg"
+                    asChild
                     className="rounded-full border-2 text-zinc-400 dark:border-zinc-700 hover:dark:bg-zinc-800"
                   >
+                    <a target="_blank" href="https://github.com/Shashivadan/vouch">
+
                     GitHub
+                    </a>
                   </Button>
                 </div>
               </div>
