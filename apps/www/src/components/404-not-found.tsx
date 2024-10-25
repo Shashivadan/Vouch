@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {  motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const content = [
   {
@@ -30,7 +30,7 @@ export default function NotFound() {
           <div className="flex gap-5">
             <motion.div
               animate={{
-                height: activeContent?.height ,
+                height: activeContent?.height,
                 width: activeContent?.width,
               }}
               className="rounded-full bg-primary transition duration-300"
@@ -54,7 +54,7 @@ export default function NotFound() {
           exit="exit"
           variants={textVariants}
           transition={{ duration: 0 }}
-          className=" text-center text-xl md:text-7xl font-bold transition delay-300 duration-300"
+          className="text-center text-xl font-bold transition delay-300 duration-300 md:text-7xl"
         >
           {activeContent?.name}
         </motion.h2>
