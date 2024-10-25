@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import icon from "public/icons/icon.svg";
 
-import { Button } from "@acme/ui/button";
+// import { Button } from "@acme/ui/button";
 import { ThemeToggle } from "@acme/ui/theme";
 
 import Beta from "./beta";
@@ -35,12 +35,12 @@ export function MainNav() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Button
+            {/* <Button
               variant="link"
               className="border0-none inline rounded-md bg-purple-500/15 px-4 py-1 text-sm font-medium text-purple-500 hover:bg-purple-600/10 hover:text-purple-500"
             >
               <Link href="/login">Login</Link>
-            </Button>
+            </Button> */}
 
             <ThemeToggle />
           </div>
