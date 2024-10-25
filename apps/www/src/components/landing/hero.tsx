@@ -32,7 +32,7 @@ export default function Hero() {
                   From happy customers to powerful testimonials in minutes.
                 </div>
                 <div>
-                  <GradientText className="inline-flex text-lg md:text-xl font-medium leading-[70px]">
+                  <GradientText className="inline-flex text-lg font-medium leading-[70px] md:text-xl">
                     Coming Soon . . .
                   </GradientText>
                 </div>
