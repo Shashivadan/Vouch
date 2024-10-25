@@ -27,7 +27,7 @@ function ThemeToggle() {
 
   return (
     <button
-      className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md border border-zinc-500/10  px-2 py-1 font-medium tracking-tight text-neutral-600 hover:bg-neutral-100  dark:text-neutral-300 dark:hover:bg-neutral-700"
+      className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md border border-zinc-500/10 px-2 py-1 font-medium tracking-tight text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-700"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       type="button"
     >

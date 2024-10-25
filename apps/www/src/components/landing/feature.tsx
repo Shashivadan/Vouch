@@ -22,7 +22,10 @@ export default function Features() {
         {/* Features grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <article key={index} className="space-y-2 dark:bg-zinc-900/30 p-10 rounded-3xl">
+            <article
+              key={index}
+              className="space-y-2 rounded-3xl p-10 dark:bg-zinc-900/30"
+            >
               <svg
                 className="h-6 w-6 fill-purple-500"
                 viewBox="0 0 24 24"
