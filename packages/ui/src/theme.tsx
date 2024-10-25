@@ -27,7 +27,7 @@ function ThemeToggle() {
 
   return (
     <button
-      className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md border border-neutral-500/10 bg-white px-2 py-1 font-medium tracking-tight text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+      className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md border border-zinc-500/10  px-2 py-1 font-medium tracking-tight text-neutral-600 hover:bg-neutral-100  dark:text-neutral-300 dark:hover:bg-neutral-700"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       type="button"
     >
@@ -50,7 +50,7 @@ function ThemeToggle() {
         />
         <span
           className={cn(
-            "absolute right-0 top-0 z-20 size-4 origin-top-right transform-gpu rounded-full bg-white transition-transform duration-500 group-hover:bg-neutral-100 dark:bg-neutral-800 group-hover:dark:bg-neutral-700",
+            "absolute right-0 top-0 z-20 size-4 origin-top-right transform-gpu rounded-full bg-white transition-transform duration-500 group-hover:bg-neutral-100 dark:bg-zinc-950 group-hover:dark:bg-neutral-700",
             theme === "dark" ? "scale-100" : "scale-0",
           )}
         />
