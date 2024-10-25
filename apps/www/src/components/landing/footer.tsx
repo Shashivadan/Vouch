@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col items-center py-8 md:flex-row md:justify-between">
           {/* Links */}
-          <div className="mb-4 flex  text-sm space-x-6 md:mb-0">
+          <div className="mb-4 flex space-x-6 text-sm md:mb-0">
             {links.map((link) => (
               <Link
                 key={link.name}

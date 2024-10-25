@@ -5,6 +5,10 @@ import reactConfig from "@acme/eslint-config/react";
 /** @type {import('typescript-eslint').Config} */
 export default [
   {
+    rules: {
+      "require-await": "off",
+      "@typescript-eslint/require-await": "error",
+    },
     ignores: [".next/**"],
   },
   ...baseConfig,

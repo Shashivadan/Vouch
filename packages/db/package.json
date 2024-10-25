@@ -28,13 +28,15 @@
     "studio": "pnpm with-env drizzle-kit studio",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --",
-    "migrate": "pnpm  with-env drizzle-kit migrate",
+    "migrate": "dotenv -e ../../.env -- tsx ./src/migrate.ts",
     "generate": "pnpm with-env drizzle-kit generate"
   },
   "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
     "@vercel/postgres": "^0.10.0",
     "drizzle-orm": "^0.35.1",
     "drizzle-zod": "^0.5.1",
+    "pg": "^8.13.1",
     "zod": "catalog:"
   },
   "devDependencies": {

@@ -8,7 +8,7 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import Google from "next-auth/providers/google";
 
 import { db } from "@acme/db/client";
-import { Account, Session, User } from "@acme/db/schema";
+import { accounts, sessions, users } from "@acme/db/schema";
 
 import { env } from "../env";
 
@@ -21,9 +21,9 @@ declare module "next-auth" {
 }
 
 const adapter = DrizzleAdapter(db, {
-  usersTable: User,
-  accountsTable: Account,
-  sessionsTable: Session,
+  usersTable: users,
+  accountsTable: accounts,
+  sessionsTable: sessions,
 });
 
 export const isSecureContext = env.NODE_ENV !== "development";

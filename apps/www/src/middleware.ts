@@ -1,11 +1,20 @@
-export { auth as middleware } from "@acme/auth";
+// export { auth as middleware } from "@acme/auth";
 
 // Or like this if you need to do something here.
 // export default auth((req) => {
 //   console.log(req.auth) //  { session: { user: { ... } } }
 // })
+// middleware.ts
 
-// Read more: https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+import { NextResponse } from "next/server";
+
+export function middleware() {
+  // const routes = req.nextUrl.pathname;
+
+  return NextResponse.next();
+}
+
+// Optionally, don't invoke Middleware on some paths
 export const config = {
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };

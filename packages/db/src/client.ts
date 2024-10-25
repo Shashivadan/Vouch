@@ -1,10 +1,17 @@
-import { sql } from "@vercel/postgres";
-import { drizzle } from "drizzle-orm/vercel-postgres";
+import { drizzle } from "drizzle-orm/node-postgres";
+import pg from "pg";
 
 import * as schema from "./schema";
 
-export const db = drizzle({
-  client: sql,
-  schema,
-  casing: "snake_case",
+const client = new pg.Client({
+  connectionString: process.env.POSTGRES_URL,
 });
+
+client
+  .connect()
+  .then()
+  .catch((error) => {
+    console.error("Failed to connect to database", error);
+  });
+
+export const db = drizzle(client, { schema });

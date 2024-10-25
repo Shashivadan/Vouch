@@ -6,7 +6,7 @@ import { cn } from "@acme/ui";
 
 import "~/styles/globals.css";
 
-import { MainNav } from "~/components/nav-bar";
+import { MainNav } from "~/components/nav-bar/main-nav";
 import { env } from "~/env";
 import Providers from "./_components/providers";
 
