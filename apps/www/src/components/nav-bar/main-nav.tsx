@@ -3,12 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import icon from "public/icons/icon.svg";
 
-
-
 import { Button } from "@acme/ui/button";
 import { ThemeToggle } from "@acme/ui/theme";
-
-
 
 import { getCurrentUser } from "~/utils/get-current-user";
 import Beta from "./beta";
@@ -57,11 +53,6 @@ export async function MainNav() {
                 </Button>
               </>
             )}
-
-
-
-
-
 
             <ThemeToggle />
           </div>

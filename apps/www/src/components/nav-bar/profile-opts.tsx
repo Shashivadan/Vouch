@@ -13,7 +13,6 @@ import {
 
 import SignOutButton from "./sign-out-button";
 
-
 interface UserData {
   name: string | null | undefined;
   image: string | null | undefined;

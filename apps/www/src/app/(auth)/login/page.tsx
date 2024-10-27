@@ -1,15 +1,16 @@
 import type { SVGProps } from "react";
 import React from "react";
-
-import { signIn } from "@acme/auth";
-import { getCurrentUser } from "~/utils/get-current-user";
 import { redirect } from "next/navigation";
 
-export default  async function Login() {
+import { signIn } from "@acme/auth";
+
+import { getCurrentUser } from "~/utils/get-current-user";
+
+export default async function Login() {
   const user = await getCurrentUser();
 
   if (user) {
-redirect("/");
+    redirect("/");
   }
 
   return (
