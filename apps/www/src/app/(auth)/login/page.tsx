@@ -2,8 +2,16 @@ import type { SVGProps } from "react";
 import React from "react";
 
 import { signIn } from "@acme/auth";
+import { getCurrentUser } from "~/utils/get-current-user";
+import { redirect } from "next/navigation";
 
-export default function Login() {
+export default  async function Login() {
+  const user = await getCurrentUser();
+
+  if (user) {
+redirect("/");
+  }
+
   return (
     <div className="p-3 md:p-0">
       <div className="relative z-10 mt-10 flex flex-1 flex-col rounded-3xl border-white/50 bg-zinc-700/30 px-4 py-10 backdrop-blur-2xl sm:justify-center md:flex-none md:px-20 lg:py-24">

@@ -14,7 +14,7 @@ export const users = pgTable("user", {
   id: text("id")
     .notNull()
     .primaryKey()
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+
     .$defaultFn(() => createId()),
   name: text("name"),
   email: text("email").unique(),
