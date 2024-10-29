@@ -3,7 +3,7 @@ import { drizzle } from "drizzle-orm/node-postgres";
 import { migrate } from "drizzle-orm/node-postgres/migrator";
 import pg from "pg";
 
-import * as schema from "./schema";
+import * as schema from "./schemas/index";
 
 const client = new pg.Client({
   connectionString: process.env.POSTGRES_URL,

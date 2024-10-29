@@ -10,7 +10,7 @@ export default async function Login() {
   const user = await getCurrentUser();
 
   if (user) {
-    redirect("/");
+    redirect("/dashboard");
   }
 
   return (
