@@ -1,9 +1,11 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+
 import { and, eq } from "@acme/db";
 import { db } from "@acme/db/client";
 import { organizationTable } from "@acme/db/schema";
+
 import { getCurrentUser } from "~/utils/get-current-user";
 
 export async function deleteProject(projectId: string) {

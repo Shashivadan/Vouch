@@ -5,9 +5,9 @@ import { FolderKanban, FolderPlus } from "lucide-react";
 import { db } from "@acme/db/client";
 import { Card } from "@acme/ui/card";
 
+import { CreateSpaces } from "~/components/create-spaces";
 import { ProjectsCard } from "~/components/project-card";
 import { getCurrentUser } from "~/utils/get-current-user";
-import { CreateSpaces } from "~/components/create-spaces";
 
 export default async function Page() {
   const user = await getCurrentUser();
@@ -40,7 +40,7 @@ export default async function Page() {
         </div>
         <div className={"mt-6 flex items-center justify-between"}>
           <h1 className={"text-2xl font-semibold md:text-2xl"}>Spaces</h1>
-         <CreateSpaces />
+          <CreateSpaces />
         </div>
         <div>
           {userOrg.length === 0 ? (
