@@ -1,14 +1,13 @@
 import React from "react";
 import { redirect } from "next/navigation";
-import { FolderKanban, Plus } from "lucide-react";
+import { FolderKanban, FolderPlus } from "lucide-react";
 
 import { db } from "@acme/db/client";
-import { Button } from "@acme/ui/button";
 import { Card } from "@acme/ui/card";
 
-import { CreateSpaces } from "~/components/create-spaces";
 import { ProjectsCard } from "~/components/project-card";
 import { getCurrentUser } from "~/utils/get-current-user";
+import { CreateSpaces } from "~/components/create-spaces";
 
 export default async function Page() {
   const user = await getCurrentUser();
@@ -41,14 +40,24 @@ export default async function Page() {
         </div>
         <div className={"mt-6 flex items-center justify-between"}>
           <h1 className={"text-2xl font-semibold md:text-2xl"}>Spaces</h1>
-          <Button>
-            {" "}
-            <Plus size={20} className="mr-2" /> Create Space
-          </Button>
+         <CreateSpaces />
         </div>
         <div>
           {userOrg.length === 0 ? (
-            <CreateSpaces />
+            <>
+              {" "}
+              <div className={"flex flex-col items-center gap-6 p-6"}>
+                <FolderPlus size={64} />
+                <h2 className={"text-2xl font-medium"}>Create Spaces</h2>
+                <p
+                  className={"text-md text-center font-normal text-opacity-35"}
+                >
+                  Start your journey by gathering valuable feedback from your
+                  community.
+                </p>
+                <CreateSpaces />
+              </div>
+            </>
           ) : (
             <div className={"flex-wrap gap-4 md:flex"}>
               {userOrg.map((project) => (

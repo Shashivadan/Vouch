@@ -49,7 +49,7 @@ export const ProjectsCard = ({ project }: { project: Project }) => {
             <DropdownMenuItem className="cursor-pointer hover:bg-red-700">
               <button
                 className="flex h-full w-full items-end"
-                onClick={() => deleteProject(project.id, project.ownerId)}
+                onClick={() => deleteProject(project.id)}
               >
                 Delete
               </button>
