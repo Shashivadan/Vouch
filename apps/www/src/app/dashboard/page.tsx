@@ -1,13 +1,13 @@
 import React from "react";
 import { redirect } from "next/navigation";
-import {  FolderKanban, Plus } from "lucide-react";
+import { FolderKanban, Plus } from "lucide-react";
 
 import { db } from "@acme/db/client";
 import { Button } from "@acme/ui/button";
 import { Card } from "@acme/ui/card";
-import { ProjectsCard } from "~/components/project-card";
 
 import { CreateSpaces } from "~/components/create-spaces";
+import { ProjectsCard } from "~/components/project-card";
 import { getCurrentUser } from "~/utils/get-current-user";
 
 export default async function Page() {

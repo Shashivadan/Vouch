@@ -13,7 +13,6 @@ import {
 
 import { deleteProject } from "~/actions/delete-project";
 
-
 interface Project {
   id: string;
   ownerId: string;
@@ -25,8 +24,6 @@ interface Project {
 }
 
 export const ProjectsCard = ({ project }: { project: Project }) => {
-
-
   return (
     <Card className="mt-6 rounded-xl p-4 shadow-md hover:shadow-lg dark:bg-zinc-900/50 md:min-w-[300px]">
       <div className={"flex items-center justify-between"}>
@@ -50,7 +47,12 @@ export const ProjectsCard = ({ project }: { project: Project }) => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="md:w-56">
             <DropdownMenuItem className="cursor-pointer hover:bg-red-700">
-              <button className=" w-full h-full flex items-end" onClick={() => deleteProject(project.id, project.ownerId)}>Delete</button>
+              <button
+                className="flex h-full w-full items-end"
+                onClick={() => deleteProject(project.id, project.ownerId)}
+              >
+                Delete
+              </button>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
