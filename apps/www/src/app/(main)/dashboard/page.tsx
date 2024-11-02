@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FolderKanban, FolderPlus } from "lucide-react";
 
@@ -40,7 +41,7 @@ export default async function Page() {
         </div>
         <div className={"mt-6 flex items-center justify-between"}>
           <h1 className={"text-2xl font-semibold md:text-2xl"}>Spaces</h1>
-          <CreateSpaces />
+          {userOrg.length > 0 && <CreateSpaces />}
         </div>
         <div>
           {userOrg.length === 0 ? (
@@ -61,7 +62,9 @@ export default async function Page() {
           ) : (
             <div className={"flex-wrap gap-4 md:flex"}>
               {userOrg.map((project) => (
-                <ProjectsCard key={project.id} project={project} />
+                <Link href={`/products/${project.id}`} key={project.id}>
+                  <ProjectsCard key={project.id} project={project} />
+                </Link>
               ))}
             </div>
           )}

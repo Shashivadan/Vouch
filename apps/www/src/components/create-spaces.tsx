@@ -55,7 +55,7 @@ export const CreateSpaces = () => {
     try {
       console.log(values);
       const result = await createProject(values);
-      toast.success("Successfully submitted the form.");
+      toast.success("Successfully created Space");
       console.log(result);
     } catch (error) {
       console.error("Form submission error", error);
