@@ -61,7 +61,7 @@ export default async function Page() {
           ) : (
             <div className={"flex-wrap gap-4 md:flex"}>
               {userOrg.map((project) => (
-                  <ProjectsCard key={project.id} project={project} />
+                <ProjectsCard key={project.id} project={project} />
               ))}
             </div>
           )}
