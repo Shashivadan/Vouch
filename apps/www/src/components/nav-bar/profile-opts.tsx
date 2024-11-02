@@ -35,12 +35,10 @@ export default function ProfileOpts({ user }: { user: UserData }) {
             </AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent className="lg:w-56">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem>Profile</DropdownMenuItem>
-          <DropdownMenuItem>Billing</DropdownMenuItem>
-          <DropdownMenuItem>Team</DropdownMenuItem>
           <DropdownMenuItem>
             <SignOutButton />
           </DropdownMenuItem>

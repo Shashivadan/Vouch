@@ -88,7 +88,9 @@ export const CreateSpaces = () => {
                     name="websiteUrl"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Website Url</FormLabel>
+                        <FormLabel>
+                          Website Url <span className="text-red-500">*</span>
+                        </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="https://www.example.com"
@@ -122,7 +124,7 @@ export const CreateSpaces = () => {
                     name="organizationName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Organization Name or Website Name</FormLabel>
+                        <FormLabel>Organization Name or Website Name  <span className="text-red-500">*</span></FormLabel>
                         <FormControl>
                           <Input placeholder="Name" {...field} />
                         </FormControl>

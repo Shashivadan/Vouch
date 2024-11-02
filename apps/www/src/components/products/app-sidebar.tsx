@@ -1,18 +1,15 @@
-import { Calendar, Home, Inbox, Search } from "lucide-react";
+import { ArrowBigLeft, Calendar, Edit, Heart, Home, Inbox, LucideDelete, Search, TicketsPlane } from "lucide-react";
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@acme/ui/sidebar";
+
+
+import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@acme/ui/sidebar";
+
+
+
+
 
 // Menu items.
-const items = [
+const Inboxstack = [
   {
     title: "All",
     url: "#",
@@ -35,6 +32,40 @@ const items = [
   },
 ];
 
+
+const embeds = [
+  {
+    title: "Wall of Fame",
+    url: "#",
+    icon: Heart,
+  },
+  {
+    title: "Request testimonial",
+    url: "#",
+    icon: TicketsPlane,
+  },
+];
+
+const spaceSettings = [
+  {
+    title: "Edit this space",
+    url: "#",
+    icon: Edit,
+  },
+  {
+    title: "Delete this space",
+    url: "#",
+    icon: LucideDelete,
+  },
+  {
+    title: "Back to dashboard",
+    url: "/dashboard",
+    icon: ArrowBigLeft,
+  },
+];
+
+
+
 export function AppSidebar({ className }: { className?: string }) {
   return (
     <Sidebar variant="floating" className={className}>
@@ -43,7 +74,7 @@ export function AppSidebar({ className }: { className?: string }) {
           <SidebarGroupLabel>Inbox</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {Inboxstack.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
@@ -60,7 +91,24 @@ export function AppSidebar({ className }: { className?: string }) {
           <SidebarGroupLabel>Intgrations</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {embeds.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon className="mr-2 h-4 w-4" />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Settings</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {spaceSettings.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
