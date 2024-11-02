@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 import { Button } from "@acme/ui/button";
 
@@ -32,7 +33,7 @@ export default function Hero() {
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <Button size="lg" className="rounded-full">
-                    Get Started
+                    <Link href="/dashboard"> Get Started</Link>
                   </Button>
                   <Button
                     variant="outline"
