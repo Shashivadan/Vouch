@@ -38,7 +38,7 @@ const items = [
 export function AppSidebar({ className }: { className?: string }) {
   return (
     <Sidebar variant="floating" className={className}>
-      <SidebarContent className="bg-zinc-950/80">
+      <SidebarContent className="dark:bg-zinc-900/40">
         <SidebarGroup>
           <SidebarGroupLabel>Inbox</SidebarGroupLabel>
           <SidebarGroupContent>

@@ -7,19 +7,20 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import { PanelLeft } from "lucide-react";
 
-
-import { Button } from '@acme/ui/button';
+import { Button } from "@acme/ui/button";
 import { useIsMobile } from "@acme/ui/hooks/use-mobile";
 import { Input } from "@acme/ui/input";
 import { Separator } from "@acme/ui/separator";
 import { Sheet, SheetContent } from "@acme/ui/sheet";
 import { Skeleton } from "@acme/ui/skeleton";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@acme/ui/tooltip";
-
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@acme/ui/tooltip";
 
 import { cn } from "./index";
-
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -269,7 +270,6 @@ const Sidebar = React.forwardRef<
 );
 Sidebar.displayName = "Sidebar";
 
-
 const SidebarTrigger: React.FC = React.forwardRef<
   React.ElementRef<typeof Button>,
   React.ComponentProps<typeof Button>
@@ -293,7 +293,7 @@ const SidebarTrigger: React.FC = React.forwardRef<
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );
-})
+});
 SidebarTrigger.displayName = "SidebarTrigger";
 
 const SidebarRail = React.forwardRef<
