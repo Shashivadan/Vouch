@@ -3,7 +3,6 @@ import pg from "pg";
 
 import * as schema from "./schemas/index";
 
-
 type DrizzleClient = ReturnType<typeof createDrizzleClient>;
 
 const createDrizzleClient = () => {
@@ -21,7 +20,6 @@ const createDrizzleClient = () => {
   return drizzle(client, { schema });
 };
 
-
 declare global {
   // eslint-disable-next-line no-var
   var drizzleGlobal: DrizzleClient | undefined;
@@ -34,6 +32,5 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 export { db };
-
 
 export type DbClient = typeof db;

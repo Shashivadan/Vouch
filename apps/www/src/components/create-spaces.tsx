@@ -124,7 +124,10 @@ export const CreateSpaces = () => {
                     name="organizationName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Organization Name or Website Name  <span className="text-red-500">*</span></FormLabel>
+                        <FormLabel>
+                          Organization Name or Website Name{" "}
+                          <span className="text-red-500">*</span>
+                        </FormLabel>
                         <FormControl>
                           <Input placeholder="Name" {...field} />
                         </FormControl>

@@ -1,12 +1,25 @@
-import { ArrowBigLeft, Calendar, Edit, Heart, Home, Inbox, LucideDelete, Search, TicketsPlane } from "lucide-react";
+import {
+  ArrowBigLeft,
+  Calendar,
+  Edit,
+  Heart,
+  Home,
+  Inbox,
+  LucideDelete,
+  Search,
+  TicketsPlane,
+} from "lucide-react";
 
-
-
-import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@acme/ui/sidebar";
-
-
-
-
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@acme/ui/sidebar";
 
 // Menu items.
 const Inboxstack = [
@@ -31,7 +44,6 @@ const Inboxstack = [
     icon: Search,
   },
 ];
-
 
 const embeds = [
   {
@@ -63,8 +75,6 @@ const spaceSettings = [
     icon: ArrowBigLeft,
   },
 ];
-
-
 
 export function AppSidebar({ className }: { className?: string }) {
   return (
