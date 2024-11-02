@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FolderKanban, FolderPlus } from "lucide-react";
 
@@ -62,9 +61,7 @@ export default async function Page() {
           ) : (
             <div className={"flex-wrap gap-4 md:flex"}>
               {userOrg.map((project) => (
-                <Link href={`/products/${project.id}`} key={project.id}>
                   <ProjectsCard key={project.id} project={project} />
-                </Link>
               ))}
             </div>
           )}
