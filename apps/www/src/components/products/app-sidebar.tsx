@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   ArrowBigLeft,
   Calendar,
@@ -22,25 +26,25 @@ import {
 } from "@acme/ui/sidebar";
 
 // Menu items.
-const Inboxstack = [
+const InboxStack = [
   {
     title: "All",
-    url: "#",
+    url: "/all",
     icon: Home,
   },
   {
     title: "Text",
-    url: "#",
+    url: "/text",
     icon: Inbox,
   },
   {
     title: "Likes",
-    url: "#",
+    url: "/likes",
     icon: Calendar,
   },
   {
     title: "Archived",
-    url: "#",
+    url: "/archived",
     icon: Search,
   },
 ];
@@ -77,6 +81,7 @@ const spaceSettings = [
 ];
 
 export function AppSidebar({ className }: { className?: string }) {
+  const path = usePathname().split("/");
   return (
     <Sidebar variant="floating" className={className}>
       <SidebarContent className="dark:bg-zinc-900/40">
@@ -84,13 +89,13 @@ export function AppSidebar({ className }: { className?: string }) {
           <SidebarGroupLabel>Inbox</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {Inboxstack.map((item) => (
+              {InboxStack.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link href={`/products/${path[2]}/${item.url}`}>
                       <item.icon className="mr-2 h-4 w-4" />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

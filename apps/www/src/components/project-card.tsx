@@ -30,7 +30,7 @@ export const ProjectsCard = ({ project }: { project: Project }) => {
       <div className={"flex items-center justify-between"}>
         <div className={"flex items-center gap-2"}>
           <Link
-            href={`/products/${project.id}`}
+            href={`/products/${project.organizationName}/all`}
             className="flex items-center gap-2"
             key={project.id}
           >

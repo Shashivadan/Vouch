@@ -1,0 +1,1 @@
+ALTER TABLE "testimonial" ADD COLUMN "liked" boolean;

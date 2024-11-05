@@ -53,13 +53,10 @@ export const CreateSpaces = () => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      console.log(values);
-      const result = await createProject(values);
+      await createProject(values);
       toast.success("Successfully created Space");
-      console.log(result);
     } catch (error) {
-      console.error("Form submission error", error);
-      toast.error("Failed to submit the form. Please try again.");
+      toast.error((error as Error).message);
     }
   }
 

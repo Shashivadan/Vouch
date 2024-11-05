@@ -3,6 +3,7 @@
 import type { z } from "zod";
 import { revalidatePath } from "next/cache";
 
+import { and, or } from "@acme/db";
 import { db } from "@acme/db/client";
 import { organizationTable } from "@acme/db/schema";
 
@@ -13,10 +14,27 @@ export async function createProject(values: z.infer<typeof formSchema>) {
   const user = await getCurrentUser();
 
   if (!user) {
-    return "You must be logged in to create a project";
+    throw new Error("You must be logged in to create a project");
   }
 
   try {
+    const uniqueOrganizationName = await db.query.organizationTable.findMany({
+      where: (organizationTable, { eq }) =>
+        or(
+          and(
+            eq(organizationTable.organizationName, values.organizationName),
+            eq(organizationTable.ownerId, user.id),
+          ),
+          eq(organizationTable.website, values.websiteUrl),
+        ),
+    });
+
+    if (uniqueOrganizationName.length > 0) {
+      throw new Error(
+        "Organization Name already exists or website already exists",
+      );
+    }
+
     const result = await db
       .insert(organizationTable)
       .values({
@@ -31,6 +49,6 @@ export async function createProject(values: z.infer<typeof formSchema>) {
     revalidatePath("/dashboard");
     return result;
   } catch (error) {
-    return (error as Error).message;
+    throw new Error((error as Error).message);
   }
 }

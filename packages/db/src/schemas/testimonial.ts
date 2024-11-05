@@ -1,6 +1,13 @@
 import { createId } from "@paralleldrive/cuid2";
 import { relations } from "drizzle-orm";
-import { boolean, pgEnum, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import {
+  boolean,
+  integer,
+  pgEnum,
+  pgTable,
+  text,
+  timestamp,
+} from "drizzle-orm/pg-core";
 
 import { organizationTable } from "./organization";
 
@@ -23,6 +30,8 @@ export const testimonialTable = pgTable("testimonial", {
   profileImages: text("images"),
   reviewImages: text("reviewImages"),
   type: typeEnum().$defaultFn(() => "text"),
+  liked: boolean("liked").$defaultFn(() => false),
+  rating: integer("rating").$defaultFn(() => 5),
 });
 
 export const testimonialRelations = relations(testimonialTable, ({ one }) => ({
@@ -31,3 +40,10 @@ export const testimonialRelations = relations(testimonialTable, ({ one }) => ({
     references: [organizationTable.id],
   }),
 }));
+
+export const OrganizationTestimonialRelations = relations(
+  organizationTable,
+  ({ many }) => ({
+    testimonials: many(testimonialTable),
+  }),
+);

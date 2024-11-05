@@ -22,6 +22,27 @@
       "when": 1730794905364,
       "tag": "0002_nifty_rhodey",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1730816436218,
+      "tag": "0003_big_mindworm",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1730821375243,
+      "tag": "0004_brown_warstar",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1730827380034,
+      "tag": "0005_left_orphan",
+      "breakpoints": true
     }
   ]
 }

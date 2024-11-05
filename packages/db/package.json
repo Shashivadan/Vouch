@@ -29,9 +29,11 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --",
     "migrate": "dotenv -e ../../.env -- tsx ./src/migrate.ts",
-    "generate": "pnpm with-env drizzle-kit generate"
+    "generate": "pnpm with-env drizzle-kit generate",
+    "seed": "dotenv -e ../../.env -- tsx ./src/seed.ts"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.2.0",
     "@paralleldrive/cuid2": "^2.2.2",
     "@vercel/postgres": "^0.10.0",
     "drizzle-orm": "^0.35.1",
