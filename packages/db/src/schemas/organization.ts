@@ -17,8 +17,8 @@ export const organizationTable = pgTable("organization", {
     () => "https://loremflickr.com/200/200?random=1",
   ),
   organizationName: text("organization"),
-  createdAt: timestamp("createdAt", { mode: "date" }).notNull(),
-  updatedAt: timestamp("updatedAt", { mode: "date" }).notNull(),
+  createdAt: timestamp("createdAt", { mode: "date" }).notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt", { mode: "date" }).notNull().defaultNow(),
 });
 
 export const organizationRelations = relations(
