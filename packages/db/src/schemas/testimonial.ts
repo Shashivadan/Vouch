@@ -29,11 +29,14 @@ export const testimonialTable = pgTable("testimonial", {
   message: text("message").notNull(),
   profileImages: text("images"),
   reviewImages: text("reviewImages"),
-  type: typeEnum().$defaultFn(() => "text"),
-  liked: boolean("liked").$defaultFn(() => false),
-  rating: integer("rating").$defaultFn(() => 5),
+  type: typeEnum()
+    .$defaultFn(() => "text")
+    .notNull(),
+  liked: boolean("liked").notNull().default(false),
+  rating: integer("rating").notNull().default(5),
 });
 
+// relations one to many
 export const testimonialRelations = relations(testimonialTable, ({ one }) => ({
   organization: one(organizationTable, {
     fields: [testimonialTable.organizationId],
@@ -41,6 +44,7 @@ export const testimonialRelations = relations(testimonialTable, ({ one }) => ({
   }),
 }));
 
+// relations many to one
 export const OrganizationTestimonialRelations = relations(
   organizationTable,
   ({ many }) => ({

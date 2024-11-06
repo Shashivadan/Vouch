@@ -1,33 +1,44 @@
-import { Badge } from "@acme/ui/badge";
-import { Card, CardContent, CardFooter, CardHeader } from "@acme/ui/card";
+"use client";
 
-export default function TestimonialCard() {
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
+
+import { Card, CardContent, CardFooter } from "@acme/ui/card";
+
+import type { TestimonialType } from "~/types";
+import { RatingStar } from "./rating-star";
+import TestmonialDialog from "./testmonial-dialog";
+
+export default function TestimonialCard({ data }: { data: TestimonialType }) {
+  const { message = "No message provided", createdAt, rating = 0 } = data;
   return (
-    <Card className="mx-auto w-full max-w-md">
-      <CardHeader className="flex flex-row items-center gap-4">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary">
-          <span className="text-2xl font-bold text-primary-foreground">Y4</span>
-        </div>
-        <div className="flex flex-col">
-          <h3 className="text-lg font-semibold">Yasmine42</h3>
-          <p className="text-sm text-muted-foreground">Marisa68@gmail.com</p>
-          <Badge variant="secondary" className="mt-1 w-fit">
-            Wall of Fame
-          </Badge>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm italic">
-          "Voluptas aranea ultra. Comes tres adicio crebro. Virga tibi
-          perspiciatis testimonium."
-        </p>
-      </CardContent>
-      <CardFooter className="flex items-center justify-between">
-        <p className="text-xs text-muted-foreground">
-          Posted on {new Date("2024-11-05T17:23:08.911Z").toLocaleDateString()}
-        </p>
-        <Badge variant="outline">Testimonial</Badge>
-      </CardFooter>
-    </Card>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Card className="mx-auto flex h-[150px] w-full flex-col overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-xl">
+        <CardContent className="flex flex-grow flex-col justify-between gap-5 overflow-hidden p-6">
+          <TestmonialDialog data={data}>
+            <div className="relative">
+              <Quote className="absolute left-0 top-0 h-6 w-6 text-primary opacity-20" />
+              <p className="pl-8 pr-4 text-start text-sm italic">
+                {message.length > 100 ? message.slice(0, 100) + "..." : message}{" "}
+              </p>
+            </div>
+          </TestmonialDialog>
+          {rating && (
+            <div className="fixed bottom-3 flex items-center">
+              <RatingStar rating={rating} />
+            </div>
+          )}
+        </CardContent>
+        <CardFooter className="fixed bottom-0 right-0 flex items-center justify-between p-4">
+          <div className="text-xs text-muted-foreground">
+            Posted on {new Date(createdAt).toDateString()}
+          </div>
+        </CardFooter>
+      </Card>
+    </motion.div>
   );
 }
