@@ -75,7 +75,6 @@ export const ProjectsCard = ({ project }: { project: Project }) => {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="mt-5 text-xl font-bold md:mt-10"></div>
     </Card>
   );
 };

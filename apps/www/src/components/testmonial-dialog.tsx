@@ -29,9 +29,13 @@ export default function TestmonialDialog({
     <>
       <Dialog>
         <DialogTrigger>{children}</DialogTrigger>
+
         <DialogContent>
           <DialogHeader>
-            <Card key={data.id} className="flex flex-col border-none">
+            <Card
+              key={data.id}
+              className="flex flex-col border-none shadow-none"
+            >
               <DialogTitle className="flex flex-row items-center gap-4">
                 {" "}
                 <Avatar>
@@ -75,7 +79,7 @@ export default function TestmonialDialog({
                   {data.liked && (
                     <Badge variant="secondary">
                       <ThumbsUp className="h-4 w-4 md:mr-1" />
-                      <div className="hidden md:block"> Liked</div>
+                      <div className="hidden md:block">Liked</div>
                     </Badge>
                   )}
                 </div>

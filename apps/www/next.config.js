@@ -29,6 +29,7 @@ const config = {
         pathname: "/**",
       },
     ],
+    unoptimized: true,
   },
 };
 
