@@ -32,7 +32,6 @@ export const testimonialTable = pgTable("testimonial", {
   type: typeEnum()
     .$defaultFn(() => "text")
     .notNull(),
-  liked: boolean("liked").notNull().default(false),
   rating: integer("rating").notNull().default(5),
 });
 

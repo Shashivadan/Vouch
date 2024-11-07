@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { ThumbsUp, Trophy } from "lucide-react";
+import { Trophy } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
 import { Badge } from "@acme/ui/badge";
@@ -29,7 +29,6 @@ export default function TestmonialDialog({
     <>
       <Dialog>
         <DialogTrigger>{children}</DialogTrigger>
-
         <DialogContent>
           <DialogHeader>
             <Card
@@ -74,12 +73,6 @@ export default function TestmonialDialog({
                     <Badge variant="secondary">
                       <Trophy className="h-4 w-4 md:mr-1" />
                       <div className="hidden md:block"> Wall of Fame</div>
-                    </Badge>
-                  )}
-                  {data.liked && (
-                    <Badge variant="secondary">
-                      <ThumbsUp className="h-4 w-4 md:mr-1" />
-                      <div className="hidden md:block">Liked</div>
                     </Badge>
                   )}
                 </div>

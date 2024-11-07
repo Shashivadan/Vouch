@@ -4,7 +4,7 @@ import { CalendarIcon, GlobeIcon, UserIcon } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@acme/ui/card";
 
-import { getProjectDetails } from "~/actions/get-project-details";
+import { getSpaceTestimonialsDetails } from "~/actions/get-space-testimonials-details";
 import NotFound from "~/components/404-not-found";
 import TestimonialCard from "~/components/testmonial-card";
 import { formatDate } from "~/utils/format-date";
@@ -17,8 +17,7 @@ export default async function page({ params }: { params: { id: string } }) {
   const user = await getCurrentUser();
   if (!user || !id) return <NotFound />;
 
-  const data = await getProjectDetails(id);
-
+  const data = await getSpaceTestimonialsDetails(id);
   if (!data) return <NotFound />;
 
   if (typeof data === "string") return <NotFound />;

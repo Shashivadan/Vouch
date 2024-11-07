@@ -14,3 +14,5 @@ export interface OrganizationTestimonialType {
 export type OrganizationType = typeof organizationTable.$inferSelect;
 
 export type TestimonialType = typeof testimonialTable.$inferSelect;
+
+export type TestimonialTableType = typeof testimonialTable;

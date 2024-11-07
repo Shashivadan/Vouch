@@ -1,44 +1,53 @@
-"use client";
+import { Image, Video } from "lucide-react";
 
-import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
-
-import { Card, CardContent, CardFooter } from "@acme/ui/card";
+import { Badge } from "@acme/ui/badge";
+import { Card, CardContent } from "@acme/ui/card";
 
 import type { TestimonialType } from "~/types";
+import { formatDate } from "~/utils/format-date";
 import { RatingStar } from "./rating-star";
 import TestmonialDialog from "./testmonial-dialog";
 
 export default function TestimonialCard({ data }: { data: TestimonialType }) {
-  const { message = "No message provided", createdAt, rating = 0 } = data;
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <Card className="mx-auto flex h-[150px] w-full flex-col overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-xl">
-        <CardContent className="flex flex-grow flex-col justify-between gap-5 overflow-hidden p-6">
-          <TestmonialDialog data={data}>
-            <div className="relative">
-              <Quote className="absolute left-0 top-0 h-6 w-6 text-primary opacity-20" />
-              <p className="pl-8 pr-4 text-start text-sm italic">
-                {message.length > 100 ? message.slice(0, 100) + "..." : message}{" "}
-              </p>
+    <Card className="w-full max-w-md">
+      <CardContent className="space-y-4 p-6">
+        <div className="flex items-start justify-between">
+          <span className="text-xl font-semibold">{data.authorName}</span>
+          <div className="flex items-center gap-2">
+            <div className="flex gap-1">
+              <RatingStar rating={data.rating} />
             </div>
-          </TestmonialDialog>
-          {rating && (
-            <div className="fixed bottom-3 flex items-center">
-              <RatingStar rating={rating} />
-            </div>
-          )}
-        </CardContent>
-        <CardFooter className="fixed bottom-0 right-0 flex items-center justify-between p-4">
-          <div className="text-xs text-muted-foreground">
-            Posted on {new Date(createdAt).toDateString()}
+            {data.type === "video" ? (
+              <Video className="h-5 w-5" />
+            ) : (
+              <Image className="h-5 w-5" />
+            )}
           </div>
-        </CardFooter>
-      </Card>
-    </motion.div>
+        </div>
+        <div className="space-y-2">
+          <TestmonialDialog data={data}>
+            <p className="text-start text-sm italic">
+              {data.message.length > 100
+                ? data.message.slice(0, 100) + "..."
+                : data.message}
+            </p>
+          </TestmonialDialog>
+          <div
+            className={`flex items-center ${data.wallOfFame ? "justify-between" : "justify-end"} `}
+          >
+            {data.wallOfFame && (
+              <Badge
+                variant="secondary"
+                className="bg-purple-600 text-zinc-100"
+              >
+                Wall of Fame
+              </Badge>
+            )}
+            <p className="text-xs">{formatDate(data.createdAt)}</p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

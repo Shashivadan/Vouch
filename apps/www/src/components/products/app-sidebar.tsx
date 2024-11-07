@@ -10,7 +10,6 @@ import {
   Home,
   Inbox,
   LucideDelete,
-  Search,
   TicketsPlane,
 } from "lucide-react";
 
@@ -42,11 +41,6 @@ const InboxStack = [
     url: "/likes",
     icon: Calendar,
   },
-  {
-    title: "Archived",
-    url: "/archived",
-    icon: Search,
-  },
 ];
 
 const embeds = [
@@ -65,18 +59,13 @@ const embeds = [
 const spaceSettings = [
   {
     title: "Edit this space",
-    url: "#",
+    url: "edit-this-space",
     icon: Edit,
   },
   {
     title: "Delete this space",
-    url: "#",
+    url: "delete-this-space",
     icon: LucideDelete,
-  },
-  {
-    title: "Back to dashboard",
-    url: "/dashboard",
-    icon: ArrowBigLeft,
   },
 ];
 
@@ -103,7 +92,7 @@ export function AppSidebar({ className }: { className?: string }) {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>Intgrations</SidebarGroupLabel>
+          <SidebarGroupLabel>Pages</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {embeds.map((item) => (
@@ -126,13 +115,21 @@ export function AppSidebar({ className }: { className?: string }) {
               {spaceSettings.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link href={`/products/${path[2]}/${item.url}`}>
                       <item.icon className="mr-2 h-4 w-4" />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href={`/dashboard`}>
+                    <ArrowBigLeft className="mr-2 h-4 w-4" />
+                    <span>Back To Dashboard</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

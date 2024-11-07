@@ -60,7 +60,6 @@ const main = async () => {
           "https://loremflickr.com/200/200?random=2",
           "https://loremflickr.com/200/200?random=3",
         ]),
-        liked: faker.datatype.boolean(),
       });
     }
 

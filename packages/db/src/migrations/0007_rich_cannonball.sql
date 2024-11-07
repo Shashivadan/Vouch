@@ -1,0 +1,1 @@
+ALTER TABLE "testimonial" DROP COLUMN IF EXISTS "liked";
