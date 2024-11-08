@@ -90,7 +90,9 @@ export const getTestimonialsLikedDetails = async (id: string) => {
     if (data.length === 0) {
       return "Project not found";
     }
-    return data[0]?.testimonials;
+    return {
+      testimonials: data[0]?.testimonials,
+    };
   } catch (error) {
     console.log(error);
     return (error as Error).message;
@@ -122,7 +124,9 @@ export const getTestimonialsWithTextOnlyDetails = async (id: string) => {
     if (data.length === 0) {
       return "Project not found";
     }
-    return data[0]?.testimonials;
+    return {
+      testimonials: data[0]?.testimonials,
+    };
   } catch (error) {
     console.log(error);
     return (error as Error).message;

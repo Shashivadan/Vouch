@@ -17,31 +17,31 @@ const main = async () => {
       schema,
     });
 
-    const orgId = "yuvx1wuxozws4h3hmxm4g3tt";
+    const orgName = "wdkmb9y0966ljch3pd263qp0";
 
     //TODO : please  login to get an id run ""npm run stuido:" and get the form users table
-    const userId = "before seeding please login to get an id";
+    // const userId = "before seeding please login to get an id";
 
-    const organizationsdata: (typeof schema.organizationTable.$inferInsert)[] =
-      [];
+    // const organizationsdata: (typeof schema.organizationTable.$inferInsert)[] =
+    //   [];
 
-    for (let i = 0; i < 10; i++) {
-      organizationsdata.push({
-        organizationName: faker.company.name(),
-        website: faker.internet.url(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        ownerId: userId,
-        id: orgId,
-      });
-    }
+    // for (let i = 0; i < 10; i++) {
+    //   organizationsdata.push({
+    //     organizationName: faker.company.name(),
+    //     website: faker.internet.url(),
+    //     createdAt: new Date(),
+    //     updatedAt: new Date(),
+    //     ownerId: userId,
+    //     id: orgName,
+    //   });
+    // }
 
     const testimonialsdata: (typeof schema.testimonialTable.$inferInsert)[] =
       [];
 
     for (let i = 0; i < 10; i++) {
       testimonialsdata.push({
-        organizationId: orgId,
+        organizationId: orgName,
         createdAt: new Date(),
         updatedAt: new Date(),
         authorName: faker.internet.username(),

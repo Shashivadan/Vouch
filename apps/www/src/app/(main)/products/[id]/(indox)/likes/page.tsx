@@ -22,18 +22,23 @@ export default async function Page({ params }: { params: { id: string } }) {
     <div>
       <Card className="mb-2 p-3 text-lg font-bold">Liked testimonials</Card>
 
-      {data.length === 0 ? (
-        <NothingHere />
-      ) : (
+      {data.testimonials && (
         <>
-          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {data.map((testmonials) => (
-              <>
-                {" "}
-                <TestimonialCard data={testmonials} />
-              </>
-            ))}
-          </div>
+          {" "}
+          {data.testimonials.length === 0 ? (
+            <NothingHere />
+          ) : (
+            <>
+              <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+                {data.testimonials.map((testmonials) => (
+                  <>
+                    {" "}
+                    <TestimonialCard data={testmonials} />
+                  </>
+                ))}
+              </div>
+            </>
+          )}
         </>
       )}
     </div>
