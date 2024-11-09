@@ -33,6 +33,7 @@ export const testimonialTable = pgTable("testimonial", {
     .$defaultFn(() => "text")
     .notNull(),
   rating: integer("rating").notNull().default(5),
+  archive: boolean("archive").notNull().default(false),
 });
 
 // relations one to many

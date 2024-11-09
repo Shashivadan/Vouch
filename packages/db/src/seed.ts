@@ -19,7 +19,7 @@ const main = async () => {
 
     const orgName = "wdkmb9y0966ljch3pd263qp0";
 
-    //TODO : please  login to get an id run ""npm run stuido:" and get the form users table
+    //TODO : please  login to get an id run ""npm run stuido" and get the form users table
     // const userId = "before seeding please login to get an id";
 
     // const organizationsdata: (typeof schema.organizationTable.$inferInsert)[] =
@@ -36,11 +36,12 @@ const main = async () => {
     //   });
     // }
 
-    const testimonialsdata: (typeof schema.testimonialTable.$inferInsert)[] =
+    const testimonialsData: (typeof schema.testimonialTable.$inferInsert)[] =
       [];
 
     for (let i = 0; i < 10; i++) {
-      testimonialsdata.push({
+      testimonialsData.push({
+        archive: faker.datatype.boolean(),
         organizationId: orgName,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -63,7 +64,7 @@ const main = async () => {
       });
     }
 
-    await db.insert(schema.testimonialTable).values(testimonialsdata);
+    await db.insert(schema.testimonialTable).values(testimonialsData);
 
     console.log("🎉 Database seeded successfully!");
   } catch (error) {

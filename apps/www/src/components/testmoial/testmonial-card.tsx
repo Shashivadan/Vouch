@@ -9,11 +9,12 @@ import type { TestimonialType } from "~/types";
 import { formatDate } from "~/utils/format-date";
 import LikeButton from "./like-button";
 import { RatingStar } from "./rating-star";
+import TestmonialAccordion from "./testmonial-accordion";
 import TestmonialDialog from "./testmonial-dialog";
 
 export default function TestimonialCard({ data }: { data: TestimonialType }) {
   return (
-    <Card className="w-full max-w-md">
+    <Card className="w-full break-inside-avoid">
       <CardContent className="space-y-4 p-6">
         <div className="flex items-start justify-between">
           <span className="truncate text-xl font-semibold">
@@ -28,16 +29,13 @@ export default function TestimonialCard({ data }: { data: TestimonialType }) {
             ) : (
               <Image className="h-5 w-5" />
             )}
+
             <LikeButton data={data} />
           </div>
         </div>
         <div className="space-y-2">
           <TestmonialDialog data={data}>
-            <p className="text-start text-sm italic">
-              {data.message.length > 100
-                ? data.message.slice(0, 100) + "..."
-                : data.message}
-            </p>
+            <p className="text-start text-sm italic">{data.message}</p>
           </TestmonialDialog>
           <div
             className={`flex items-center ${
@@ -54,6 +52,7 @@ export default function TestimonialCard({ data }: { data: TestimonialType }) {
             )}
             <p className="text-xs">{formatDate(data.createdAt)}</p>
           </div>
+          <TestmonialAccordion data={data} />
         </div>
       </CardContent>
     </Card>

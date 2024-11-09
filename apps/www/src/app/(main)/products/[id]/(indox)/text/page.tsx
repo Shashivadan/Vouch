@@ -5,7 +5,7 @@ import { Card } from "@acme/ui/card";
 import { getTestimonialsWithTextOnlyDetails } from "~/actions/get-space-testimonials-details";
 import NotFound from "~/components/404-not-found";
 import NothingHere from "~/components/nothing-here";
-import TestimonialCard from "~/components/testmonial-card";
+import TestimonialCard from "~/components/testmoial/testmonial-card";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const id: string = params.id;
@@ -27,12 +27,12 @@ export default async function Page({ params }: { params: { id: string } }) {
             <NothingHere />
           ) : (
             <>
-              <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+              <div className="columns-1 md:columns-2">
                 {data.testimonials.map((testmonials) => (
-                  <>
+                  <div className="mb-2">
                     {" "}
                     <TestimonialCard data={testmonials} />
-                  </>
+                  </div>
                 ))}
               </div>
             </>

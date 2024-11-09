@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  ArchiveIcon,
   ArrowBigLeft,
   Calendar,
   Edit,
@@ -41,9 +42,14 @@ const InboxStack = [
     url: "/likes",
     icon: Calendar,
   },
+  {
+    title: "Archived",
+    url: "/archived",
+    icon: ArchiveIcon,
+  },
 ];
 
-const embeds = [
+const pages = [
   {
     title: "Wall of Fame",
     url: "#",
@@ -95,7 +101,7 @@ export function AppSidebar({ className }: { className?: string }) {
           <SidebarGroupLabel>Pages</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {embeds.map((item) => (
+              {pages.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
