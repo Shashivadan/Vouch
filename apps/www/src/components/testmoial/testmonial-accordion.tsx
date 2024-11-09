@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import html2canvas from "html2canvas";
-import { Archive, CopyIcon, Download, Edit, Share, Trash2 } from "lucide-react";
+import { Archive, CopyIcon, Download, Edit, Trash2 } from "lucide-react";
 
 import {
   Accordion,
@@ -18,6 +17,7 @@ import type { TestimonialType } from "~/types";
 import { addToArchive } from "~/actions/add-to-archive";
 import { deleteTestmonial } from "~/actions/delete-testmonial";
 import { createSocialCard } from "~/utils/create-testmonial-card";
+import ShareTestmonial from "./share-testmonial";
 
 export default function TestmonialAccordion({
   data,
@@ -107,11 +107,8 @@ export default function TestmonialAccordion({
             <Button variant="outline" size="sm" className="rounded-sm">
               Edit <Edit size={16} className="ml-2" />
             </Button>
-            <Button variant="outline" size="sm" className="rounded-sm" asChild>
-              <Link target="_blank" href={`/share/${data.id}`}>
-                Share <Share size={16} className="ml-2" />
-              </Link>
-            </Button>
+            <ShareTestmonial data={data} />
+
             <Button
               onClick={handleDownload}
               variant="outline"
