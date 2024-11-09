@@ -18,7 +18,7 @@ import type { TestimonialType } from "~/types";
 import { formatDate } from "~/utils/format-date";
 import { RatingStar } from "./rating-star";
 
-export default function TestmonialDialog({
+export default function TestimonialDialog({
   children,
   data,
 }: {

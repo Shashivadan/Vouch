@@ -9,8 +9,8 @@ import type { TestimonialType } from "~/types";
 import { formatDate } from "~/utils/format-date";
 import LikeButton from "./like-button";
 import { RatingStar } from "./rating-star";
-import TestmonialAccordion from "./testmonial-accordion";
-import TestmonialDialog from "./testmonial-dialog";
+import TestimonialAccordion from "./testimonial-accordion";
+import TestimonialDialog from "./testimonial-dialog";
 
 export default function TestimonialCard({ data }: { data: TestimonialType }) {
   return (
@@ -34,9 +34,9 @@ export default function TestimonialCard({ data }: { data: TestimonialType }) {
           </div>
         </div>
         <div className="space-y-2">
-          <TestmonialDialog data={data}>
+          <TestimonialDialog data={data}>
             <p className="text-start text-sm italic">{data.message}</p>
-          </TestmonialDialog>
+          </TestimonialDialog>
           <div
             className={`flex items-center ${
               data.wallOfFame ? "justify-between" : "justify-end"
@@ -52,7 +52,7 @@ export default function TestimonialCard({ data }: { data: TestimonialType }) {
             )}
             <p className="text-xs">{formatDate(data.createdAt)}</p>
           </div>
-          <TestmonialAccordion data={data} />
+          <TestimonialAccordion data={data} />
         </div>
       </CardContent>
     </Card>

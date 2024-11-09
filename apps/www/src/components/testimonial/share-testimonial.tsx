@@ -12,7 +12,7 @@ import {
 
 import type { TestimonialType } from "~/types";
 
-export default function ShareTestmonial({ data }: { data: TestimonialType }) {
+export default function ShareTestimonial({ data }: { data: TestimonialType }) {
   const domain = document.location.origin;
   const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(`${domain}/share/${data.id}`)}&text=${encodeURIComponent("Check out these amazing customer testimonial! 🌟")}`;
   const linkedinShareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`${domain}/share/${data.id}`)}&title=${encodeURIComponent("Real stories from real users ⭐️ See what everyone's saying about us!")}&summary=${encodeURIComponent("Check out these amazing customer testimonial! 🌟")}&source=${encodeURIComponent(`${domain}/share/${data.id}`)}`;

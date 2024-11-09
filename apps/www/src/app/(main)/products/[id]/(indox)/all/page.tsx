@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@acme/ui/card";
 import { getSpaceTestimonialsDetails } from "~/actions/get-space-testimonials-details";
 import NotFound from "~/components/404-not-found";
 import NothingHere from "~/components/nothing-here";
-import TestimonialCard from "~/components/testmoial/testmonial-card";
+import TestimonialCard from "~/components/testimonial/testimonial-card";
 import { formatDate } from "~/utils/format-date";
 import { getCurrentUser } from "~/utils/get-current-user";
 
@@ -70,11 +70,11 @@ export default async function page({ params }: { params: { id: string } }) {
       ) : (
         <>
           <div className="columns-1 lg:columns-2">
-            {data.testimonials.map((testmonials) => (
+            {data.testimonials.map((Testimonials) => (
               <>
                 {" "}
                 <div className="mb-2">
-                  <TestimonialCard data={testmonials} />
+                  <TestimonialCard data={Testimonials} />
                 </div>
               </>
             ))}

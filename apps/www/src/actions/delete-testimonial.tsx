@@ -8,7 +8,7 @@ import { organizationTable, testimonialTable } from "@acme/db/schema";
 
 import { getCurrentUser } from "~/utils/get-current-user";
 
-export async function deleteTestmonial(id: string) {
+export async function deleteTestimonial(id: string) {
   const user = await getCurrentUser();
 
   if (!user) {

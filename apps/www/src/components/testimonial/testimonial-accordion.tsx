@@ -15,18 +15,18 @@ import { toast } from "@acme/ui/toast";
 
 import type { TestimonialType } from "~/types";
 import { addToArchive } from "~/actions/add-to-archive";
-import { deleteTestmonial } from "~/actions/delete-testmonial";
-import { createSocialCard } from "~/utils/create-testmonial-card";
-import ShareTestmonial from "./share-testmonial";
+import { deleteTestimonial } from "~/actions/delete-testimonial";
+import { createSocialCard } from "~/utils/create-testimonial-card";
+import ShareTestimonial from "./share-testimonial";
 
-export default function TestmonialAccordion({
+export default function TestimonialAccordion({
   data,
 }: {
   data: TestimonialType;
 }) {
   const handleDelete = async () => {
     try {
-      await deleteTestmonial(data.id);
+      await deleteTestimonial(data.id);
       toast.success("Testimonial deleted successfully");
     } catch (error) {
       toast.error((error as Error).message);
@@ -107,7 +107,7 @@ export default function TestmonialAccordion({
             <Button variant="outline" size="sm" className="rounded-sm">
               Edit <Edit size={16} className="ml-2" />
             </Button>
-            <ShareTestmonial data={data} />
+            <ShareTestimonial data={data} />
 
             <Button
               onClick={handleDownload}
