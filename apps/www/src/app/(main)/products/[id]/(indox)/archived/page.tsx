@@ -1,5 +1,43 @@
 import React from "react";
 
-export default function Page() {
-  return <div>Page</div>;
+import { Card } from "@acme/ui/card";
+
+import { getTestimonialsWithArchivedDetails } from "~/actions/get-space-testimonials-details";
+import NotFound from "~/components/404-not-found";
+import NothingHere from "~/components/nothing-here";
+import TestimonialCard from "~/components/testimonial/testimonial-card";
+
+export default async function Page({ params }: { params: { id: string } }) {
+  const id: string = params.id;
+
+  if (!id) return <NotFound />;
+
+  const data = await getTestimonialsWithArchivedDetails(id);
+
+  if (!data) return <NotFound />;
+
+  if (typeof data === "string") return <NotFound />;
+  return (
+    <div>
+      <Card className="mb-2 p-3 text-lg font-bold">Text Testimonials</Card>
+      {data.testimonials && (
+        <>
+          {data.testimonials.length === 0 ? (
+            <NothingHere />
+          ) : (
+            <>
+              <div className="columns-1 md:columns-2">
+                {data.testimonials.map((Testimonials) => (
+                  <div className="mb-2">
+                    {" "}
+                    <TestimonialCard data={Testimonials} />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </>
+      )}
+    </div>
+  );
 }

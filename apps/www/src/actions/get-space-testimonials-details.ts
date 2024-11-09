@@ -159,3 +159,37 @@ export const getSingleTestimonialDetails = async (id: string) => {
     return (error as Error).message;
   }
 };
+
+export const getTestimonialsWithArchivedDetails = async (id: string) => {
+  const user = await getCurrentUser();
+
+  if (!user) {
+    throw new Error("You must be logged in to get space details");
+  }
+
+  try {
+    const data = (await db.query.organizationTable.findMany({
+      where: (organizationTable, { eq }: { eq: Eq }) =>
+        and(
+          eq(organizationTable.organizationName, id),
+          eq(organizationTable.ownerId, user.id),
+        ),
+      with: {
+        testimonials: {
+          where: (testimonialsTable: TestimonialTableType) =>
+            eq(testimonialsTable.archive, true),
+        },
+      },
+    })) as OrganizationTestimonialType[];
+
+    if (data.length === 0) {
+      return "Project not found";
+    }
+    return {
+      testimonials: data[0]?.testimonials,
+    };
+  } catch (error) {
+    console.log(error);
+    return (error as Error).message;
+  }
+};
