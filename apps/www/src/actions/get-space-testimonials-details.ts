@@ -1,5 +1,6 @@
 import { and, eq } from "@acme/db";
 import { db } from "@acme/db/client";
+import { organizationTable, testimonialTable } from "@acme/db/schema";
 
 import type {
   Eq,
@@ -127,6 +128,32 @@ export const getTestimonialsWithTextOnlyDetails = async (id: string) => {
     return {
       testimonials: data[0]?.testimonials,
     };
+  } catch (error) {
+    console.log(error);
+    return (error as Error).message;
+  }
+};
+
+export const getSingleTestimonialDetails = async (id: string) => {
+  try {
+    const testimonialWithOrg = await db
+      .select({
+        testimonial: testimonialTable,
+        orgName: organizationTable.organizationName,
+        orgLogo: organizationTable.logo,
+      })
+      .from(testimonialTable)
+      .innerJoin(
+        organizationTable,
+        eq(testimonialTable.organizationId, organizationTable.id),
+      )
+      .where(eq(testimonialTable.id, id))
+      .limit(1);
+
+    if (testimonialWithOrg.length === 0)
+      throw new Error("Testimonial not found");
+
+    return testimonialWithOrg[0];
   } catch (error) {
     console.log(error);
     return (error as Error).message;

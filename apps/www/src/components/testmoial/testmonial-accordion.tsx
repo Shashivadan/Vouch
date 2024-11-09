@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import html2canvas from "html2canvas";
 import { Archive, CopyIcon, Download, Edit, Share, Trash2 } from "lucide-react";
 
@@ -58,10 +59,9 @@ export default function TestmonialAccordion({
         backgroundColor: null,
         scale: 2,
         logging: false,
-        useCORS: true, // Enable CORS for images
-        allowTaint: true, // Allow cross-origin images
+        useCORS: true,
+        allowTaint: true,
         onclone: (clonedDoc) => {
-          // Force all images to be loaded in the cloned document
           const images = clonedDoc.getElementsByTagName("img");
           Array.from(images).forEach((img) => {
             img.crossOrigin = "anonymous";
@@ -107,8 +107,10 @@ export default function TestmonialAccordion({
             <Button variant="outline" size="sm" className="rounded-sm">
               Edit <Edit size={16} className="ml-2" />
             </Button>
-            <Button variant="outline" size="sm" className="rounded-sm">
-              share <Share size={16} className="ml-2" />
+            <Button variant="outline" size="sm" className="rounded-sm" asChild>
+              <Link target="_blank" href={`/share/${data.id}`}>
+                Share <Share size={16} className="ml-2" />
+              </Link>
             </Button>
             <Button
               onClick={handleDownload}
