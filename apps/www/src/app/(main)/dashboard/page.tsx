@@ -5,7 +5,7 @@ import { FolderKanban, FolderPlus } from "lucide-react";
 import { db } from "@acme/db/client";
 import { Card } from "@acme/ui/card";
 
-import { CreateSpaces } from "~/components/create-spaces";
+import { CreateSpaces } from "~/components/products/create-spaces";
 import { ProjectsCard } from "~/components/project-card";
 import { getCurrentUser } from "~/utils/get-current-user";
 

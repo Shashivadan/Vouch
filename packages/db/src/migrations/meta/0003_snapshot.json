@@ -1,6 +1,6 @@
 {
-  "id": "4a15d4d9-48c6-494b-a0c4-0231a5f3ff54",
-  "prevId": "c03f10b6-073f-44f6-980b-659c5c4240ad",
+  "id": "1e612b75-8634-4af5-b46c-d91ac1dd6b0f",
+  "prevId": "7a299424-733c-4a4c-b348-fdfb9a9b053f",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -444,7 +444,21 @@
           "type": "type",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
+        },
+        "rating": {
+          "name": "rating",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 5
+        },
+        "archive": {
+          "name": "archive",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
         }
       },
       "indexes": {},
@@ -452,6 +466,59 @@
         "testimonial_organizationId_organization_id_fk": {
           "name": "testimonial_organizationId_organization_id_fk",
           "tableFrom": "testimonial",
+          "tableTo": "organization",
+          "columnsFrom": ["organizationId"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "public.questions": {
+      "name": "questions",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "question1": {
+          "name": "question1",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "organizationId": {
+          "name": "organizationId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "questions_organizationId_organization_id_fk": {
+          "name": "questions_organizationId_organization_id_fk",
+          "tableFrom": "questions",
           "tableTo": "organization",
           "columnsFrom": ["organizationId"],
           "columnsTo": ["id"],

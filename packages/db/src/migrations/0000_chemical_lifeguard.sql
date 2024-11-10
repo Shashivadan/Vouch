@@ -1,3 +1,4 @@
+CREATE TYPE "public"."type" AS ENUM('text', 'video');--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "account" (
 	"userId" text NOT NULL,
 	"type" text NOT NULL,
@@ -48,6 +49,42 @@ CREATE TABLE IF NOT EXISTS "verificationToken" (
 	CONSTRAINT "verificationToken_identifier_token_pk" PRIMARY KEY("identifier","token")
 );
 --> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "organization" (
+	"id" text PRIMARY KEY NOT NULL,
+	"ownerId" text NOT NULL,
+	"website" text NOT NULL,
+	"logo" text,
+	"organization" text NOT NULL,
+	"createdAt" timestamp DEFAULT now() NOT NULL,
+	"updatedAt" timestamp DEFAULT now() NOT NULL,
+	CONSTRAINT "organization_website_unique" UNIQUE("website"),
+	CONSTRAINT "organization_organization_unique" UNIQUE("organization")
+);
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "testimonial" (
+	"id" text PRIMARY KEY NOT NULL,
+	"organizationId" text NOT NULL,
+	"createdAt" timestamp DEFAULT now() NOT NULL,
+	"updatedAt" timestamp DEFAULT now() NOT NULL,
+	"authorName" text NOT NULL,
+	"authorEmail" text NOT NULL,
+	"wallOfFame" boolean DEFAULT false NOT NULL,
+	"message" text NOT NULL,
+	"images" text,
+	"reviewImages" text,
+	"type" "type" NOT NULL,
+	"rating" integer DEFAULT 5 NOT NULL,
+	"archive" boolean DEFAULT false NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "questions" (
+	"id" text PRIMARY KEY NOT NULL,
+	"question1" text,
+	"createdAt" timestamp DEFAULT now() NOT NULL,
+	"updatedAt" timestamp DEFAULT now() NOT NULL,
+	"organizationId" text NOT NULL
+);
+--> statement-breakpoint
 DO $$ BEGIN
  ALTER TABLE "account" ADD CONSTRAINT "account_userId_user_id_fk" FOREIGN KEY ("userId") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
@@ -62,6 +99,24 @@ END $$;
 --> statement-breakpoint
 DO $$ BEGIN
  ALTER TABLE "session" ADD CONSTRAINT "session_userId_user_id_fk" FOREIGN KEY ("userId") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;
+EXCEPTION
+ WHEN duplicate_object THEN null;
+END $$;
+--> statement-breakpoint
+DO $$ BEGIN
+ ALTER TABLE "organization" ADD CONSTRAINT "organization_ownerId_user_id_fk" FOREIGN KEY ("ownerId") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;
+EXCEPTION
+ WHEN duplicate_object THEN null;
+END $$;
+--> statement-breakpoint
+DO $$ BEGIN
+ ALTER TABLE "testimonial" ADD CONSTRAINT "testimonial_organizationId_organization_id_fk" FOREIGN KEY ("organizationId") REFERENCES "public"."organization"("id") ON DELETE cascade ON UPDATE no action;
+EXCEPTION
+ WHEN duplicate_object THEN null;
+END $$;
+--> statement-breakpoint
+DO $$ BEGIN
+ ALTER TABLE "questions" ADD CONSTRAINT "questions_organizationId_organization_id_fk" FOREIGN KEY ("organizationId") REFERENCES "public"."organization"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;

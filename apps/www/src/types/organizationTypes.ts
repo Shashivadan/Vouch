@@ -8,6 +8,8 @@ export interface OrganizationTestimonialType {
   organizationName: string;
   createdAt: Date;
   updatedAt: Date;
+  headerTitle: string;
+  customMessage: string;
   testimonials: TestimonialType[];
 }
 

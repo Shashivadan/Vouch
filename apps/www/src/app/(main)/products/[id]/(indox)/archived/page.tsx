@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   if (typeof data === "string") return <NotFound />;
   return (
     <div>
-      <Card className="mb-2 p-3 text-lg font-bold">Text Testimonials</Card>
+      <Card className="mb-2 p-3 text-lg font-bold">Archived</Card>
       {data.testimonials && (
         <>
           {data.testimonials.length === 0 ? (

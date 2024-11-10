@@ -17,7 +17,7 @@ const main = async () => {
       schema,
     });
 
-    const orgName = "wdkmb9y0966ljch3pd263qp0";
+    const orgName = "v21lf9dajs4lxn6zcsd3app5";
 
     //TODO : please  login to get an id run ""npm run stuido" and get the form users table
     // const userId = "before seeding please login to get an id";

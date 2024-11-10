@@ -169,7 +169,7 @@ export const getTestimonialsWithArchivedDetails = async (id: string) => {
 
   try {
     const data = (await db.query.organizationTable.findMany({
-      where: (organizationTable, { eq }: { eq: Eq }) =>
+      where: (organizationTable, { eq }) =>
         and(
           eq(organizationTable.organizationName, id),
           eq(organizationTable.ownerId, user.id),

@@ -16,6 +16,8 @@ export const organizationTable = pgTable("organization", {
   logo: text("logo").$defaultFn(
     () => "https://loremflickr.com/200/200?random=1",
   ),
+  headerTitle: text("headerTitle").notNull(),
+  customMessage: text("customMessage").notNull(),
   organizationName: text("organization").notNull().unique(),
   createdAt: timestamp("createdAt", { mode: "date" }).notNull().defaultNow(),
   updatedAt: timestamp("updatedAt", { mode: "date" }).notNull().defaultNow(),
