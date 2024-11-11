@@ -65,7 +65,7 @@ export default async function page({ params }: { params: { id: string } }) {
         </CardContent>
       </Card>
       <Card className="mb-2 flex items-center justify-between p-3">
-        <div className="text-xl font-bold">Reviews</div>
+        <div className="text-xl font-bold">Testimonials</div>
         <CreateTestimonial data={data} />
       </Card>
 
