@@ -51,7 +51,7 @@ export default function CreateTestimonial({
                   {data.organizationName}
                 </CardTitle>
               </CardHeader>
-              <CreateTestimonialForm />
+              <CreateTestimonialForm data={data} />
             </Card>
             <DialogDescription></DialogDescription>
           </DialogHeader>

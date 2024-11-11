@@ -13,9 +13,7 @@ export const organizationTable = pgTable("organization", {
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
   website: text("website").notNull().unique(),
-  logo: text("logo").$defaultFn(
-    () => "https://loremflickr.com/200/200?random=1",
-  ),
+  logo: text("logo"),
   headerTitle: text("headerTitle").notNull(),
   customMessage: text("customMessage").notNull(),
   organizationName: text("organization").notNull().unique(),

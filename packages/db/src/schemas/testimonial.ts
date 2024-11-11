@@ -27,7 +27,9 @@ export const testimonialTable = pgTable("testimonial", {
   authorEmail: text("authorEmail").notNull(),
   wallOfFame: boolean("wallOfFame").notNull().default(false),
   message: text("message").notNull(),
-  profileImages: text("images"),
+  profileImages: text("images").$defaultFn(
+    () => `https://robohash.org/${createId()}`,
+  ),
   reviewImages: text("reviewImages"),
   type: typeEnum()
     .$defaultFn(() => "text")

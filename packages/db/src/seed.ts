@@ -50,16 +50,14 @@ const main = async () => {
         wallOfFame: faker.datatype.boolean(),
         message: faker.lorem.paragraph(),
         profileImages: faker.helpers.arrayElement([
-          "https://loremflickr.com/200/200?random=1",
-          "https://loremflickr.com/200/200?random=2",
-          "https://loremflickr.com/200/200?random=3",
+          "https://avatar.iran.liara.run/public/boy",
+          "https://robohash.org/" + faker.database.mongodbObjectId(),
         ]),
         type: faker.helpers.arrayElement(["text"]),
         rating: faker.number.int({ min: 1, max: 5 }),
         reviewImages: faker.helpers.arrayElement([
-          "https://loremflickr.com/200/200?random=1",
-          "https://loremflickr.com/200/200?random=2",
-          "https://loremflickr.com/200/200?random=3",
+          "https://avatar.iran.liara.run/public/boy",
+          "https://robohash.org/" + faker.database.mongodbObjectId(),
         ]),
       });
     }

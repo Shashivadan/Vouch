@@ -20,18 +20,23 @@ import {
 import { Input } from "@acme/ui/input";
 import { Textarea } from "@acme/ui/textarea";
 
-const formSchema = z.object({
+import type { OrganizationType } from "~/types";
+import { createTestimonial } from "~/actions/create-testimonial";
+
+const imageRegex =
+  /^(?:\bhttps?:\/\/[^\s]*\.(?:png|jpg|jpeg|gif|svg|webp)\b|$)/g;
+export const testimonialFormSchema = z.object({
   authorName: z.string().min(4, "Name must be at least 4 characters"),
-  profileImages: z.string(),
+  profileImages: z.string().regex(imageRegex).optional(),
   authorEmail: z.string().email(),
-  reviewImages: z.string(),
+  reviewImages: z.string().regex(imageRegex).optional(),
   message: z.string().min(10, "Review must be at least 30 characters"),
   rating: z.number().min(1).max(5),
 });
 
-export function CreateTestimonialForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+export function CreateTestimonialForm({ data }: { data: OrganizationType }) {
+  const form = useForm<z.infer<typeof testimonialFormSchema>>({
+    resolver: zodResolver(testimonialFormSchema),
     defaultValues: {
       authorName: "",
       profileImages: "",
@@ -42,8 +47,9 @@ export function CreateTestimonialForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof testimonialFormSchema>) {
     try {
+      await createTestimonial(values, data.id);
       toast.success(
         `Successfully created testimonial ${JSON.stringify(values)}`,
       );
@@ -178,7 +184,7 @@ export function CreateTestimonialForm() {
           )}
         />
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Create</Button>
       </form>
     </Form>
   );

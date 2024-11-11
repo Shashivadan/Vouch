@@ -31,7 +31,7 @@ import { createProject } from "~/actions/create-space";
 import { queryQuestions } from "~/utils/create-space-constants";
 
 const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
-const logoRegex = /\bhttps?:\/\/[^\s]*\.(?:png|jpg|jpeg|gif|svg|ico)\b/g;
+const logoRegex = /\bhttps?:\/\/[^\s]*\.(?:png|jpg|jpeg|gif|svg|ico|webp)\b/g;
 
 export const formSchema = z.object({
   websiteUrl: z
