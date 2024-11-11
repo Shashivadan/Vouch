@@ -35,7 +35,7 @@ export async function editSpace(
       )
       .returning();
 
-    revalidatePath(`/products/${values.organizationName}`);
+    revalidatePath(`/products/${values.organizationName}/**`);
 
     return result;
   } catch (error) {

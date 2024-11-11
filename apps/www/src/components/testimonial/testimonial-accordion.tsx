@@ -2,7 +2,7 @@
 
 import React from "react";
 import html2canvas from "html2canvas";
-import { Archive, CopyIcon, Download, Edit, Trash2 } from "lucide-react";
+import { Archive, CopyIcon, Download, Trash2 } from "lucide-react";
 
 import {
   Accordion,
@@ -17,6 +17,7 @@ import type { TestimonialType } from "~/types";
 import { addToArchive } from "~/actions/add-to-archive";
 import { deleteTestimonial } from "~/actions/delete-testimonial";
 import { createSocialCard } from "~/utils/create-testimonial-card";
+import EditTestimonial from "./edit-testimonial";
 import ShareTestimonial from "./share-testimonial";
 
 export default function TestimonialAccordion({
@@ -104,11 +105,8 @@ export default function TestimonialAccordion({
             >
               Delete <Trash2 size={16} className="ml-2" />
             </Button>
-            <Button variant="outline" size="sm" className="rounded-sm">
-              Edit <Edit size={16} className="ml-2" />
-            </Button>
+            <EditTestimonial data={data} />
             <ShareTestimonial data={data} />
-
             <Button
               onClick={handleDownload}
               variant="outline"

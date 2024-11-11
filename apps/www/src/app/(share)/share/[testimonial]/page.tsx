@@ -84,13 +84,15 @@ export default async function page({
             </div>
           </div>
           {testimonialDetails.reviewImages && (
-            <Image
-              src={testimonialDetails.reviewImages}
-              alt="Review image"
-              width={500}
-              height={300}
-              className="aspect-video w-full rounded-lg object-cover"
-            />
+            <div className="flex items-center justify-center">
+              <Image
+                width={300}
+                height={300}
+                src={testimonialDetails.reviewImages}
+                alt="Review"
+                className="mt-4 rounded-md object-cover object-center"
+              />
+            </div>
           )}
           {testimonialDetails.type === "video" && (
             <p className="text-center text-muted-foreground">

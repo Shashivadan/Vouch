@@ -54,20 +54,23 @@ export default function TestimonialDialog({
                 </div>
               </DialogTitle>
               <CardHeader className=""></CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="">
                 <p className="text-sm">{data.message}</p>
                 {data.reviewImages && (
-                  <Image
-                    width={300}
-                    height={300}
-                    src={data.reviewImages}
-                    alt="Review"
-                    className="mt-4 h-48 w-full rounded-md object-cover"
-                  />
+                  <div className="flex items-center justify-center">
+                    <Image
+                      width={300}
+                      height={300}
+                      src={data.reviewImages}
+                      alt="Review"
+                      className="mt-4 rounded-md object-cover object-center"
+                    />
+                  </div>
                 )}
               </CardContent>
               <CardFooter className="flex items-center justify-between">
                 <RatingStar rating={data.rating ? data.rating : 0} />
+                <div className=""></div>
                 <div className="flex gap-2">
                   {data.wallOfFame && (
                     <Badge variant="secondary">
