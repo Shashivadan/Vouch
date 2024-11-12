@@ -52,12 +52,12 @@ const InboxStack = [
 const pages = [
   {
     title: "Wall of Fame",
-    url: "#",
+    url: "/wall-of-fame",
     icon: Heart,
   },
   {
     title: "Request testimonial",
-    url: "#",
+    url: "/request-testimonial",
     icon: TicketsPlane,
   },
 ];
@@ -104,10 +104,10 @@ export function AppSidebar({ className }: { className?: string }) {
               {pages.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link href={`/products/${path[2]}/${item.url}`}>
                       <item.icon className="mr-2 h-4 w-4" />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

@@ -46,6 +46,7 @@
     "eslint": "catalog:",
     "jiti": "^2.3.3",
     "prettier": "catalog:",
+    "shiki": "^1.22.2",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
