@@ -6,7 +6,6 @@ import { cn } from "@acme/ui";
 
 import "~/styles/globals.css";
 
-import { MainNav } from "~/components/nav-bar/main-nav";
 import { env } from "~/env";
 import Providers from "./_components/providers";
 
@@ -57,8 +56,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <MainNav />
-          <main className="mx-auto max-w-screen-2xl">{children}</main>
+          <main className="">{children}</main>
         </Providers>
       </body>
     </html>
