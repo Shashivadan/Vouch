@@ -73,7 +73,7 @@ export default async function page({ params }: { params: { id: string } }) {
         <NothingHere />
       ) : (
         <>
-          <div className="columns-1 lg:columns-2">
+          <div className="columns-[450px]">
             {data.testimonials.map((Testimonials) => (
               <>
                 {" "}

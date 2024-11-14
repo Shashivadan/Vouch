@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function MordranAnimatedButton() {
-  // Animation variants for the spinning border effect
   const borderVariants = {
     initial: {
       background:

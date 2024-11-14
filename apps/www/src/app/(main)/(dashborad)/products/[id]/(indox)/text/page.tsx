@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             <NothingHere />
           ) : (
             <>
-              <div className="columns-1 md:columns-2">
+              <div className="columns-[450px]">
                 {data.testimonials.map((Testimonials) => (
                   <div className="mb-2">
                     {" "}

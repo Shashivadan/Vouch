@@ -12,7 +12,7 @@ import type {
 } from "~/types";
 import { getCurrentUser } from "~/utils/get-current-user";
 
-export const getSpaceDetails = async (id: string) => {
+export const getSpaceDetails = async (orgName: string) => {
   const user = await getCurrentUser();
 
   if (!user) {
@@ -23,7 +23,7 @@ export const getSpaceDetails = async (id: string) => {
     const data = (await db.query.organizationTable.findMany({
       where: (organizationTable, { eq }) =>
         and(
-          eq(organizationTable.organizationName, id),
+          eq(organizationTable.organizationName, orgName),
           eq(organizationTable.ownerId, user.id),
         ),
     })) as OrganizationType[];
@@ -38,7 +38,7 @@ export const getSpaceDetails = async (id: string) => {
   }
 };
 
-export const getSpaceTestimonialsDetails = async (id: string) => {
+export const getSpaceTestimonialsDetails = async (orgName: string) => {
   const user = await getCurrentUser();
 
   if (!user) {
@@ -49,7 +49,7 @@ export const getSpaceTestimonialsDetails = async (id: string) => {
     const data = (await db.query.organizationTable.findMany({
       where: (organizationTable, { eq }) =>
         and(
-          eq(organizationTable.organizationName, id),
+          eq(organizationTable.organizationName, orgName),
           eq(organizationTable.ownerId, user.id),
         ),
       with: {
@@ -68,7 +68,7 @@ export const getSpaceTestimonialsDetails = async (id: string) => {
   }
 };
 
-export const getTestimonialsLikedDetails = async (id: string) => {
+export const getTestimonialsLikedDetails = async (orgName: string) => {
   const user = await getCurrentUser();
 
   if (!user) {
@@ -79,7 +79,7 @@ export const getTestimonialsLikedDetails = async (id: string) => {
     const data = (await db.query.organizationTable.findMany({
       where: (organizationTable, { eq }: { eq: Eq }) =>
         and(
-          eq(organizationTable.organizationName, id),
+          eq(organizationTable.organizationName, orgName),
           eq(organizationTable.ownerId, user.id),
         ),
       with: {
@@ -102,7 +102,7 @@ export const getTestimonialsLikedDetails = async (id: string) => {
   }
 };
 
-export const getTestimonialsWithTextOnlyDetails = async (id: string) => {
+export const getTestimonialsWithTextOnlyDetails = async (orgName: string) => {
   const user = await getCurrentUser();
 
   if (!user) {
@@ -113,7 +113,7 @@ export const getTestimonialsWithTextOnlyDetails = async (id: string) => {
     const data = (await db.query.organizationTable.findMany({
       where: (organizationTable, { eq }: { eq: Eq }) =>
         and(
-          eq(organizationTable.organizationName, id),
+          eq(organizationTable.organizationName, orgName),
           eq(organizationTable.ownerId, user.id),
         ),
       with: {
@@ -162,7 +162,7 @@ export const getSingleTestimonialDetails = async (id: string) => {
   }
 };
 
-export const getTestimonialsWithArchivedDetails = async (id: string) => {
+export const getTestimonialsWithArchivedDetails = async (orgName: string) => {
   const user = await getCurrentUser();
 
   if (!user) {
@@ -173,7 +173,7 @@ export const getTestimonialsWithArchivedDetails = async (id: string) => {
     const data = (await db.query.organizationTable.findMany({
       where: (organizationTable, { eq }) =>
         and(
-          eq(organizationTable.organizationName, id),
+          eq(organizationTable.organizationName, orgName),
           eq(organizationTable.ownerId, user.id),
         ),
       with: {
@@ -196,20 +196,12 @@ export const getTestimonialsWithArchivedDetails = async (id: string) => {
   }
 };
 
-export const getTestimonialsWithWallOfFameDetails = async (id: string) => {
-  const user = await getCurrentUser();
-
-  if (!user) {
-    throw new Error("You must be logged in to get space details");
-  }
-
+export const getTestimonialsWithWallOfFameDetails = async (OrgName: string) => {
   try {
     const data = (await db.query.organizationTable.findMany({
       where: (organizationTable, { eq }: { eq: Eq }) =>
-        and(
-          eq(organizationTable.organizationName, id),
-          eq(organizationTable.ownerId, user.id),
-        ),
+        eq(organizationTable.organizationName, OrgName),
+
       with: {
         testimonials: {
           where: (testimonialsTable: TestimonialTableType) =>
@@ -221,10 +213,42 @@ export const getTestimonialsWithWallOfFameDetails = async (id: string) => {
     if (data.length === 0) {
       return "Project not found";
     }
-    revalidatePath(`/${id}`);
+    revalidatePath(`/${OrgName}`);
     return data[0];
   } catch (error) {
     console.log(error);
+    return (error as Error).message;
+  }
+};
+
+export const getSpaceDetailsPublic = async (orgName: string) => {
+  try {
+    const data = (await db.query.organizationTable.findMany({
+      where: (organizationTable, { eq }) =>
+        eq(organizationTable.organizationName, orgName),
+    })) as OrganizationType[];
+
+    if (data.length === 0) {
+      return "Project not found";
+    }
+    return data[0];
+  } catch (error) {
+    console.log(error);
+    return (error as Error).message;
+  }
+};
+
+export const getQuestionsDetails = async (id: string) => {
+  try {
+    const data = await db.query.questionTable.findMany({
+      where: (questionTable, { eq }) => eq(questionTable.organizationId, id),
+    });
+
+    if (data.length === 0) {
+      return "Project not found";
+    }
+    return data;
+  } catch (error) {
     return (error as Error).message;
   }
 };

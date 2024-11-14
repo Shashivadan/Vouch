@@ -3,7 +3,7 @@
 import type { z } from "zod";
 import { revalidatePath } from "next/cache";
 
-import { and, or } from "@acme/db";
+import { or } from "@acme/db";
 import { db } from "@acme/db/client";
 import { organizationTable, questionTable } from "@acme/db/schema";
 
@@ -21,10 +21,7 @@ export async function createProject(values: z.infer<typeof formSchema>) {
     const uniqueOrganizationName = await db.query.organizationTable.findMany({
       where: (organizationTable, { eq }) =>
         or(
-          and(
-            eq(organizationTable.organizationName, values.organizationName),
-            eq(organizationTable.ownerId, user.id),
-          ),
+          eq(organizationTable.organizationName, values.organizationName),
           eq(organizationTable.website, values.websiteUrl),
         ),
     });

@@ -35,7 +35,15 @@ export default function TestimonialCard({ data }: { data: TestimonialType }) {
       </div>
       <blockquote className="mt-2 text-sm">{data.message}</blockquote>
       {data.reviewImages && (
-        <Image src={data.reviewImages} alt="" width="800" height="800" />
+        <div className="flex items-center justify-center">
+          <Image
+            src={data.reviewImages}
+            alt=""
+            className="mt-2 rounded-md"
+            width="800"
+            height="800"
+          />
+        </div>
       )}
     </figure>
   );
