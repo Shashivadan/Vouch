@@ -50,9 +50,7 @@ export function CreateTestimonialForm({ data }: { data: OrganizationType }) {
   async function onSubmit(values: z.infer<typeof testimonialFormSchema>) {
     try {
       await createTestimonial(values, data.id);
-      toast.success(
-        `Successfully created testimonial ${JSON.stringify(values)}`,
-      );
+      toast.success(`Successfully created testimonial}`);
       form.reset();
     } catch (error) {
       toast.error((error as Error).message);
