@@ -16,7 +16,7 @@ export default function ShowCaseLink({
   const domain = document.location.origin;
   return (
     <div>
-      <div className="font-bold">On our hosted page</div>
+      <div className="w-full font-bold">On our hosted page</div>
       <div className="mt-2 flex items-center justify-between gap-2 rounded-md bg-zinc-700/30">
         <div className="flex w-full items-center justify-between p-1 font-mono text-white">
           <div className="cursor-pointer text-primary">{`${domain}/${name}/${page}`}</div>

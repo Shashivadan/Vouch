@@ -13,7 +13,7 @@ export default async function page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div>
+    <div className="w-full">
       <div className="rounded-lg border border-red-700 bg-zinc-900/50">
         <div className="p-3 md:p-6">
           <div className="mb-4 text-2xl font-semibold">Delete my account</div>

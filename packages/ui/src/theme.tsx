@@ -59,4 +59,4 @@ function ThemeToggle() {
   );
 }
 
-export { ThemeProvider, ThemeToggle };
+export { ThemeProvider, ThemeToggle, useTheme };

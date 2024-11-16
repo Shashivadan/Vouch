@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { ThemeProvider } from "next-themes";
 
 import { cn } from "@acme/ui";
-import { ThemeProvider } from "@acme/ui/theme";
 import { Toaster } from "@acme/ui/toast";
 
 import { TRPCReactProvider } from "~/trpc/react";
@@ -50,7 +50,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           GeistMono.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="white">
           <TRPCReactProvider>{props.children}</TRPCReactProvider>
           <Toaster />
         </ThemeProvider>

@@ -5,12 +5,14 @@ import { usePathname } from "next/navigation";
 import {
   ArchiveIcon,
   ArrowBigLeft,
+  Book,
   Calendar,
   Edit,
   Heart,
   Home,
   Inbox,
   LucideDelete,
+  Pin,
   TicketsPlane,
 } from "lucide-react";
 
@@ -75,6 +77,19 @@ const spaceSettings = [
   },
 ];
 
+const embeddings = [
+  {
+    title: "embed",
+    url: "embed",
+    icon: Pin,
+  },
+  {
+    title: "embed-doc",
+    url: "embed-doc",
+    icon: Book,
+  },
+];
+
 export function AppSidebar({ className }: { className?: string }) {
   const path = usePathname().split("/");
   return (
@@ -102,6 +117,23 @@ export function AppSidebar({ className }: { className?: string }) {
           <SidebarGroupContent>
             <SidebarMenu>
               {pages.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <Link href={`/products/${path[2]}/${item.url}`}>
+                      <item.icon className="mr-2 h-4 w-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Embeddings</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {embeddings.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <Link href={`/products/${path[2]}/${item.url}`}>

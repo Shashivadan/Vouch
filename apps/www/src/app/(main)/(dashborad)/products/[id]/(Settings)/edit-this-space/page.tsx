@@ -13,7 +13,7 @@ export default async function page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div>
+    <div className="w-full">
       <EditSpace data={data} />
     </div>
   );
