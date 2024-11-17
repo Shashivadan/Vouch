@@ -17,7 +17,7 @@ import {
 } from "@acme/ui/form";
 import { Input } from "@acme/ui/input";
 
-import type { OrganizationType } from "~/types";
+import type { OrganizationTestimonialType } from "~/types";
 import { editSpace } from "~/actions/edit-space";
 
 const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
@@ -40,7 +40,11 @@ export const editFormSchema = z.object({
     .optional(),
 });
 
-export default function EditSpace({ data }: { data: OrganizationType }) {
+export default function EditSpace({
+  data,
+}: {
+  data: OrganizationTestimonialType;
+}) {
   const form = useForm<z.infer<typeof editFormSchema>>({
     resolver: zodResolver(editFormSchema),
   });

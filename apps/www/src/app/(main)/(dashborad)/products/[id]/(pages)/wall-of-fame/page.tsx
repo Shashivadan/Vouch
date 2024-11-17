@@ -2,6 +2,8 @@ import React from "react";
 
 import ShowCaseLink from "../_components/show-case-links";
 
+export const dynamic = "force-dynamic";
+
 export default function page({ params }: { params: { id: string } }) {
   return (
     <div className="w-full p-5">

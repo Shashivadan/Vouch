@@ -8,6 +8,7 @@ import type {
   Eq,
   OrganizationTestimonialType,
   OrganizationType,
+  QuestionTableType,
   TestimonialTableType,
 } from "~/types";
 import { getCurrentUser } from "~/utils/get-current-user";
@@ -248,6 +249,38 @@ export const getQuestionsDetails = async (id: string) => {
       return "Project not found";
     }
     return data;
+  } catch (error) {
+    return (error as Error).message;
+  }
+};
+
+export const getOrganizationQuestionDetails = async (orgName: string) => {
+  try {
+    const user = await getCurrentUser();
+
+    if (!user) {
+      throw new Error("You must be logged in to get space details");
+    }
+
+    const data = (await db.query.organizationTable.findMany({
+      where: (organizationTable, { eq }) =>
+        and(
+          eq(organizationTable.organizationName, orgName),
+          eq(organizationTable.ownerId, user.id),
+        ),
+
+      with: {
+        questions: {
+          where: (questionTable: QuestionTableType) =>
+            eq(questionTable.id, organizationTable.id),
+        },
+      },
+    })) as OrganizationTestimonialType[];
+
+    if (data.length === 0) {
+      return "Project not found";
+    }
+    return data[0];
   } catch (error) {
     return (error as Error).message;
   }

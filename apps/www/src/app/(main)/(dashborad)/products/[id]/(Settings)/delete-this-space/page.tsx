@@ -4,6 +4,8 @@ import { getSpaceDetails } from "~/actions/get-space-testimonials-details";
 import NotFound from "~/components/404-not-found";
 import DeleteAccount from "~/components/delete-space";
 
+export const dynamic = "force-dynamic";
+
 export default async function page({ params }: { params: { id: string } }) {
   const id: string = params.id;
 
