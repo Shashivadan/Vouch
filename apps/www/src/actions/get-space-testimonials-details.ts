@@ -6,6 +6,7 @@ import { organizationTable, testimonialTable } from "@acme/db/schema";
 
 import type {
   Eq,
+  OrganizationQuestionsType,
   OrganizationTestimonialType,
   OrganizationType,
   QuestionTableType,
@@ -289,7 +290,7 @@ export const getOrganizationQuestionDetails = async (orgName: string) => {
             eq(questionTable.id, organizationTable.id),
         },
       },
-    })) as OrganizationTestimonialType[];
+    })) as OrganizationQuestionsType[];
 
     if (data.length === 0) {
       return "Project not found";
