@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { startTransition, useOptimistic } from "react";
 import { useRouter } from "next/navigation";
 import { Heart } from "lucide-react";
 
@@ -9,6 +11,11 @@ import { api } from "~/trpc/react";
 
 export default function LikeButton({ data }: { data: TestimonialType }) {
   const router = useRouter();
+  const [optimisticWallOfFame, setOptimisticWallOfFame] = useOptimistic(
+    data.wallOfFame,
+    (state, newValue: boolean) => newValue,
+  );
+
   const mutation = api.likeTestimonials.like.useMutation({
     onSuccess: (data) => {
       toast.success(
@@ -17,9 +24,13 @@ export default function LikeButton({ data }: { data: TestimonialType }) {
       router.refresh();
     },
     onError: (error: unknown) => {
+      // Revert optimistic update on error
+      startTransition(() => {
+        setOptimisticWallOfFame(data.wallOfFame);
+      });
+
       if (error instanceof Error) {
         toast.error(`Something went wrong: ${error.message}`);
-
         console.error("Detailed error:", error);
       } else {
         toast.error("Something went wrong");
@@ -29,13 +40,20 @@ export default function LikeButton({ data }: { data: TestimonialType }) {
   });
 
   const handleLike = () => {
-    mutation.mutate({ id: data.id, value: data.wallOfFame });
+    startTransition(() => {
+      setOptimisticWallOfFame(!optimisticWallOfFame);
+      mutation.mutate({ id: data.id, value: data.wallOfFame });
+    });
   };
 
   return (
-    <button disabled={mutation.isPending} onClick={handleLike}>
+    <button
+      disabled={mutation.isPending}
+      onClick={handleLike}
+      className="disabled:opacity-50"
+    >
       <Heart
-        fill={data.wallOfFame ? "red" : "none"}
+        fill={optimisticWallOfFame ? "red" : "none"}
         className="h-5 w-5 cursor-pointer text-red-500 transition-colors duration-150 hover:text-red-500"
       />
     </button>

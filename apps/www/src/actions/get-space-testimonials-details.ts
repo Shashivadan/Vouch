@@ -1,6 +1,6 @@
 import { revalidatePath } from "next/cache";
 
-import { and, eq } from "@acme/db";
+import { and, desc, eq } from "@acme/db";
 import { db } from "@acme/db/client";
 import { organizationTable, testimonialTable } from "@acme/db/schema";
 
@@ -54,7 +54,11 @@ export const getSpaceTestimonialsDetails = async (orgName: string) => {
           eq(organizationTable.ownerId, user.id),
         ),
       with: {
-        testimonials: true,
+        testimonials: {
+          orderBy: (testimonials: TestimonialTableType) => [
+            desc(testimonials.createdAt),
+          ],
+        },
       },
       limit: 2,
     })) as OrganizationTestimonialType[];
@@ -87,6 +91,10 @@ export const getTestimonialsLikedDetails = async (orgName: string) => {
         testimonials: {
           where: (testimonialsTable: TestimonialTableType) =>
             eq(testimonialsTable.wallOfFame, true),
+
+          orderBy: (testimonials: TestimonialTableType) => [
+            desc(testimonials.createdAt),
+          ],
         },
       },
     })) as OrganizationTestimonialType[];
@@ -121,6 +129,9 @@ export const getTestimonialsWithTextOnlyDetails = async (orgName: string) => {
         testimonials: {
           where: (testimonialsTable: TestimonialTableType) =>
             eq(testimonialsTable.type, "text"),
+          orderBy: (testimonials: TestimonialTableType) => [
+            desc(testimonials.createdAt),
+          ],
         },
       },
     })) as OrganizationTestimonialType[];
@@ -181,6 +192,9 @@ export const getTestimonialsWithArchivedDetails = async (orgName: string) => {
         testimonials: {
           where: (testimonialsTable: TestimonialTableType) =>
             eq(testimonialsTable.archive, true),
+          orderBy: (testimonials: TestimonialTableType) => [
+            desc(testimonials.createdAt),
+          ],
         },
       },
     })) as OrganizationTestimonialType[];
