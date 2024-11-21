@@ -7,6 +7,7 @@ import {
   ArrowBigLeft,
   Book,
   Calendar,
+  Code2,
   Edit,
   Heart,
   Home,
@@ -79,12 +80,25 @@ const spaceSettings = [
 
 const embeddings = [
   {
-    title: "embed",
+    title: "Embed",
     url: "embed",
     icon: Pin,
   },
   {
-    title: "embed-doc",
+    title: "Embed-Doc",
+    url: "embed-doc",
+    icon: Book,
+  },
+];
+
+const api = [
+  {
+    title: "Api",
+    url: "api",
+    icon: Code2,
+  },
+  {
+    title: "Api-Doc",
     url: "embed-doc",
     icon: Book,
   },
@@ -134,6 +148,23 @@ export function AppSidebar({ className }: { className?: string }) {
           <SidebarGroupContent>
             <SidebarMenu>
               {embeddings.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <Link href={`/products/${path[2]}/${item.url}`}>
+                      <item.icon className="mr-2 h-4 w-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Api integration</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {api.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <Link href={`/products/${path[2]}/${item.url}`}>
