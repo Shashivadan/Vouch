@@ -99,7 +99,7 @@ const api = [
   },
   {
     title: "Api-Doc",
-    url: "embed-doc",
+    url: "api-doc",
     icon: Book,
   },
 ];

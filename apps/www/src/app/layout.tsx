@@ -7,6 +7,7 @@ import { cn } from "@acme/ui";
 import "~/styles/globals.css";
 
 import { env } from "~/env";
+import { siteConfig } from "~/utils/site";
 import Providers from "./_components/providers";
 
 export const metadata: Metadata = {
@@ -15,22 +16,39 @@ export const metadata: Metadata = {
       ? "https://vouch.lab-x.xyz"
       : "http://localhost:3000",
   ),
-  title: "Vouch",
+  keywords: [
+    "vouch",
+    "testimonials",
+    "feedback",
+    "review",
+    "customer",
+    "customer testimonials",
+    "customer feedback",
+    "customer reviews",
+  ],
+  authors: [{ name: "Shashi Vadan", url: "https://github.com/shashivadan" }],
+  title: siteConfig.title,
   icons: "/icons/icon.png",
-  description:
-    "Vouch is a zero-code platform that transforms the way businesses collect and showcase customer testimonials.",
+  description: siteConfig.description,
   openGraph: {
-    title: "Vouch",
-    description:
-      "Vouch is a zero-code platform that transforms the way businesses collect and showcase customer testimonials.",
-    url: "https://vouch.lab-x.xyz",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
     type: "website",
-    siteName: "Vouch",
+    siteName: siteConfig.title,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@shashivadan99",
     creator: "@shashivadan99",
+    title: "Vouch",
   },
 };
 
