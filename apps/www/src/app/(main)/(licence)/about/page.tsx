@@ -4,6 +4,12 @@ import { Badge } from "@acme/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@acme/ui/card";
 
 export default function AboutPage() {
+  const sentences = [
+    "Launch in 5 minutes, no coding required",
+    "Increase conversion rates",
+    "Save hours of manual work",
+    "Full control over presentation",
+  ];
   return (
     <div className="container mx-auto space-y-8 px-4 py-8">
       <h1 className="mb-4 text-center text-4xl font-bold lg:text-left">
@@ -31,12 +37,7 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent>
             <ul className="space-y-2">
-              {[
-                "Collect video and text testimonials",
-                "Automate follow-up sequences",
-                "Manage testimonials in one dashboard",
-                "Display social proof across channels",
-              ].map((item, index) => (
+              {sentences.map((item, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="mr-2 h-5 w-5 flex-shrink-0 text-green-500" />
                   <span>{item}</span>
