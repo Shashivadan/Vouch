@@ -420,6 +420,18 @@ importers:
         specifier: ^4.4.0
         version: 4.4.0(@types/node@22.7.8)(rollup@4.29.1)(typescript@5.6.3)(vite@6.0.6(@types/node@22.7.8)(jiti@2.3.3)(tsx@4.19.1)(yaml@2.6.0))
     devDependencies:
+      '@acme/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@acme/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
+      '@acme/tailwind-config':
+        specifier: workspace:*
+        version: link:../../tooling/tailwind
+      '@acme/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
       '@eslint/js':
         specifier: ^9.17.0
         version: 9.17.0
