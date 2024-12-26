@@ -74,7 +74,24 @@ export default tseslint.config(
         },
       ],
       "@typescript-eslint/no-non-null-assertion": "error",
+      "@typescript-eslint/no-unused-expressions": [
+        "error",
+        { allowShortCircuit: true, allowTernary: true },
+      ],
+      "@typescript-eslint/dot-notation": ["error", { allowKeywords: true }],
       "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+      "@typescript-eslint/no-empty-function": [
+        "error",
+        {
+          allow: [
+            "arrowFunctions",
+            "protected-constructors",
+            "private-constructors",
+            "decoratedFunctions",
+            "methods",
+          ],
+        },
+      ],
     },
   },
   {
