@@ -47,8 +47,8 @@ export default async function Login() {
               By loging in, you agree to our{" "}
               <a href="/terms" className="underline hover:text-white">
                 Terms
-              </a>{" "}
-              and{" "}
+              </a>
+              and
               <a href="/privacy" className="underline hover:text-white">
                 Privacy Policy
               </a>
