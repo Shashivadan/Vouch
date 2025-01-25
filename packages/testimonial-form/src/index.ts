@@ -1,5 +1,3 @@
-import "./style/global.css";
+import "@/style/global.css";
 
-import TestimonialForm from "./components/testimonial-from";
-
-export { TestimonialForm };
+export * from "@/components/testimonial-from";
