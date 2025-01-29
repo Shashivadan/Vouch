@@ -13,7 +13,7 @@ export default async function page({ params }: { params: { id: string } }) {
 
   const data = await getSpaceDetails(id);
 
-  if (typeof data === "string" || !data) {
+  if (typeof data === "string") {
     return <NotFound />;
   }
 

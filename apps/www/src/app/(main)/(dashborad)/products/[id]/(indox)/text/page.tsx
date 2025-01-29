@@ -23,24 +23,22 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <div>
       <Card className="mb-2 p-3 text-lg font-bold">Text Testimonials</Card>
-      {data.testimonials && (
-        <>
-          {data.testimonials.length === 0 ? (
-            <NothingHere />
-          ) : (
-            <>
-              <div className="columns-[450px]">
-                {data.testimonials.map((Testimonials) => (
-                  <div className="mb-2">
-                    {" "}
-                    <TestimonialCard data={Testimonials} />
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-        </>
-      )}
+      <>
+        {data.testimonials.length === 0 ? (
+          <NothingHere />
+        ) : (
+          <>
+            <div className="columns-[450px]">
+              {data.testimonials.map((Testimonials) => (
+                <div className="mb-2">
+                  {" "}
+                  <TestimonialCard data={Testimonials} />
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </>
     </div>
   );
 }

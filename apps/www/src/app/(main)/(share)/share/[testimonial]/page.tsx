@@ -19,7 +19,7 @@ export default async function page({
 
   const data = await getSingleTestimonialDetails(testimonial);
 
-  if (typeof data === "string" || !data) {
+  if (typeof data === "string") {
     return <NotFound />;
   }
 

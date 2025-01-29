@@ -17,11 +17,19 @@ export async function POST(
     (await req.json()) as z.infer<typeof testimonialFormSchema>;
 
   try {
-    if (!data.message || data.rating || !data.authorEmail || !data.authorName) {
-      return NextResponse.json({
-        message:
-          "you need to povided the messag , rating , authorEmail , your-name",
-      });
+    if (
+      !data.message ||
+      !data.rating ||
+      !data.authorEmail ||
+      !data.authorName
+    ) {
+      return NextResponse.json(
+        {
+          message:
+            "you need to povided the messag , rating , authorEmail , your-name",
+        },
+        { status: 409 },
+      );
     }
 
     const result = await db.transaction(async (tx) => {

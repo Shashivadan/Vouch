@@ -30,21 +30,21 @@ export default function NotFound() {
           <div className="flex gap-5">
             <motion.div
               animate={{
-                height: activeContent?.height,
-                width: activeContent?.width,
+                height: activeContent.height,
+                width: activeContent.width,
               }}
               className="rounded-full bg-primary transition duration-300"
             />
             <motion.div
               animate={{
-                height: activeContent?.height,
-                width: activeContent?.width,
+                height: activeContent.height,
+                width: activeContent.width,
               }}
               className="rounded-full bg-primary transition duration-300"
             />
           </div>
           <div className="mt-10">
-            <Icon rotate={activeContent?.rotate ?? 180} />
+            <Icon rotate={activeContent.rotate} />
           </div>
         </div>
         <motion.h2
@@ -56,7 +56,7 @@ export default function NotFound() {
           transition={{ duration: 0 }}
           className="text-center text-xl font-bold transition delay-300 duration-300 md:text-7xl"
         >
-          {activeContent?.name}
+          {activeContent.name}
         </motion.h2>
       </div>
     </div>
