@@ -1,8 +1,8 @@
 import React from "react";
 import { CalendarIcon, GlobeIcon, UserIcon } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@acme/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@vouch/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@vouch/ui/card";
 
 import { getSpaceTestimonialsDetails } from "~/actions/get-space-testimonials-details";
 import NotFound from "~/components/404-not-found";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import NotFound from "@acme/ui/components/404-not-found";
+import NotFound from "@vouch/ui/components/404-not-found";
 
 import { getOrgTestimonials } from "~/actions/getOrgTestimonials";
 import MarqueeMain from "~/components/marquee-main";

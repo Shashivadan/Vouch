@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import { cn } from "@acme/ui/index";
+import { cn } from "@vouch/ui/index";
 
 export default function Workflow() {
   const cards = [

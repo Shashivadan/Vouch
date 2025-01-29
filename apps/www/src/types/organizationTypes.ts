@@ -2,7 +2,7 @@ import type {
   organizationTable,
   questionTable,
   testimonialTable,
-} from "@acme/db/schema";
+} from "@vouch/db/schema";
 
 export interface OrganizationTestimonialType {
   id: string;

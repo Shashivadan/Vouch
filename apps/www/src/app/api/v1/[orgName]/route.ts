@@ -2,9 +2,9 @@ import type { NextRequest } from "next/server";
 import type { z } from "zod";
 import { NextResponse } from "next/server";
 
-import { eq } from "@acme/db";
-import { db } from "@acme/db/client";
-import { testimonialTable } from "@acme/db/schema";
+import { eq } from "@vouch/db";
+import { db } from "@vouch/db/client";
+import { testimonialTable } from "@vouch/db/schema";
 
 import type { testimonialFormSchema } from "~/components/testimonial/create-testimonial-form";
 

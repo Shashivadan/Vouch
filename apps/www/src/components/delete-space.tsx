@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@vouch/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -13,9 +13,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
-import { Input } from "@acme/ui/input";
-import { Label } from "@acme/ui/label";
+} from "@vouch/ui/dialog";
+import { Input } from "@vouch/ui/input";
+import { Label } from "@vouch/ui/label";
 
 import { deleteSpace } from "~/actions/delete-space";
 

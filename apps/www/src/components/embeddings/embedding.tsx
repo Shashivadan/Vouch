@@ -2,15 +2,15 @@
 
 import React, { useState } from "react";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@vouch/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@acme/ui/tabs";
+} from "@vouch/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@vouch/ui/tabs";
 
 const HighlightedCode = ({ code }: { code: string }) => (
   <pre className="overflow-x-auto rounded-md bg-zinc-800 p-4 text-blue-200">

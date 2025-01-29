@@ -20,7 +20,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "./src/index.ts"),
-      name: "testimonial-forms",
+      name: "@vouch/testimonial-forms",
       fileName: (format) => `index.${format}.js`,
       formats: ["es", "umd"],
     },

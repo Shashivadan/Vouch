@@ -4,7 +4,7 @@ import React, { startTransition, useOptimistic } from "react";
 import { useRouter } from "next/navigation";
 import { Heart } from "lucide-react";
 
-import { toast } from "@acme/ui/toast";
+import { toast } from "@vouch/ui/toast";
 
 import type { TestimonialType } from "~/types";
 import { api } from "~/trpc/react";

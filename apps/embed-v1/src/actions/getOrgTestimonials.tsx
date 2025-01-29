@@ -1,7 +1,7 @@
 "use server";
 
-import { eq } from "@acme/db";
-import { db } from "@acme/db/client";
+import { eq } from "@vouch/db";
+import { db } from "@vouch/db/client";
 
 import type {
   OrganizationTestimonialType,

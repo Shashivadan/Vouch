@@ -1,4 +1,4 @@
-import { cn } from "@acme/ui";
+import { cn } from "@vouch/ui";
 
 interface MarqueeProps {
   className?: string;

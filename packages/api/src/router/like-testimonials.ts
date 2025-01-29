@@ -1,8 +1,8 @@
 import type { TRPCRouterRecord } from "@trpc/server";
 import { z } from "zod";
 
-import { eq } from "@acme/db";
-import { testimonialTable } from "@acme/db/schema";
+import { eq } from "@vouch/db";
+import { testimonialTable } from "@vouch/db/schema";
 
 import { protectedProcedure } from "../trpc";
 

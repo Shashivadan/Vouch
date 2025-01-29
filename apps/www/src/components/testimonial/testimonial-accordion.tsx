@@ -9,9 +9,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@acme/ui/accordion";
-import { Button } from "@acme/ui/button";
-import { toast } from "@acme/ui/toast";
+} from "@vouch/ui/accordion";
+import { Button } from "@vouch/ui/button";
+import { toast } from "@vouch/ui/toast";
 
 import type { TestimonialType } from "~/types";
 import { addToArchive } from "~/actions/add-to-archive";

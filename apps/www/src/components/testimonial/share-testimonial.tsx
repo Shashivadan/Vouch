@@ -1,14 +1,14 @@
 import React from "react";
 import { CopyIcon, LucideLinkedin, Share, Twitter } from "lucide-react";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@vouch/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@acme/ui/dropdown-menu";
-import { toast } from "@acme/ui/toast";
+} from "@vouch/ui/dropdown-menu";
+import { toast } from "@vouch/ui/toast";
 
 import type { TestimonialType } from "~/types";
 

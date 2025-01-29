@@ -2,9 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 
-import { and, eq } from "@acme/db";
-import { db } from "@acme/db/client";
-import { organizationTable, questionTable } from "@acme/db/schema";
+import { and, eq } from "@vouch/db";
+import { db } from "@vouch/db/client";
+import { organizationTable, questionTable } from "@vouch/db/schema";
 
 import { getCurrentUser } from "~/utils/get-current-user";
 

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Card, CardContent, CardHeader } from "@acme/ui/card";
-import { Skeleton } from "@acme/ui/skeleton";
+import { Card, CardContent, CardHeader } from "@vouch/ui/card";
+import { Skeleton } from "@vouch/ui/skeleton";
 
 export function TestimonialSkeleton() {
   return (

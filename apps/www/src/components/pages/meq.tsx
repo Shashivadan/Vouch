@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { cn } from "@acme/ui";
-import { Marquee } from "@acme/ui/marquee";
+import { cn } from "@vouch/ui";
+import { Marquee } from "@vouch/ui/marquee";
 
 const reviews = [
   {

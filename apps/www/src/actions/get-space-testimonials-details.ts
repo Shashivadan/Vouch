@@ -1,8 +1,8 @@
 import { revalidatePath } from "next/cache";
 
-import { and, desc, eq } from "@acme/db";
-import { db } from "@acme/db/client";
-import { organizationTable, testimonialTable } from "@acme/db/schema";
+import { and, desc, eq } from "@vouch/db";
+import { db } from "@vouch/db/client";
+import { organizationTable, testimonialTable } from "@vouch/db/schema";
 
 import type {
   Eq,

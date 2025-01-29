@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
-import { Card, CardContent, CardHeader } from "@acme/ui/card";
+import { Card, CardContent, CardHeader } from "@vouch/ui/card";
 
 import { getSingleTestimonialDetails } from "~/actions/get-space-testimonials-details";
 import NotFound from "~/components/404-not-found";

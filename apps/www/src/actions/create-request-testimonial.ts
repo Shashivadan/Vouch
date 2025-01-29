@@ -3,8 +3,8 @@
 import type { z } from "zod";
 import { revalidatePath } from "next/cache";
 
-import { db } from "@acme/db/client";
-import { testimonialTable } from "@acme/db/schema";
+import { db } from "@vouch/db/client";
+import { testimonialTable } from "@vouch/db/schema";
 
 import type { testimonialFormSchema } from "~/components/testimonial/create-testimonial-form";
 import type { OrganizationType } from "~/types";

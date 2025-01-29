@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@vouch/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -13,7 +13,7 @@ import {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
+} from "@vouch/ui/dialog";
 import {
   Form,
   FormControl,
@@ -22,9 +22,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@acme/ui/form";
-import { Input } from "@acme/ui/input";
-import { Textarea } from "@acme/ui/textarea";
+} from "@vouch/ui/form";
+import { Input } from "@vouch/ui/input";
+import { Textarea } from "@vouch/ui/textarea";
 
 import type { TestimonialType } from "~/types";
 import { editTestimonial } from "~/actions/edit-testimonial";

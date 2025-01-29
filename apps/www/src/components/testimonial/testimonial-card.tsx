@@ -2,8 +2,8 @@
 
 import { Image, Video } from "lucide-react";
 
-import { Badge } from "@acme/ui/badge";
-import { Card, CardContent } from "@acme/ui/card";
+import { Badge } from "@vouch/ui/badge";
+import { Card, CardContent } from "@vouch/ui/card";
 
 import type { TestimonialType } from "~/types";
 import { formatDate } from "~/utils/format-date";

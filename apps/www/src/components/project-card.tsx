@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { Ellipsis, UserRound } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
-import { Card } from "@acme/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@vouch/ui/avatar";
+import { Card } from "@vouch/ui/card";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@acme/ui/dropdown-menu";
+} from "@vouch/ui/dropdown-menu";
 
 import { deleteProject } from "~/actions/delete-project";
 

@@ -3,9 +3,9 @@
 import type { z } from "zod";
 import { revalidatePath } from "next/cache";
 
-import { or } from "@acme/db";
-import { db } from "@acme/db/client";
-import { organizationTable, questionTable } from "@acme/db/schema";
+import { or } from "@vouch/db";
+import { db } from "@vouch/db/client";
+import { organizationTable, questionTable } from "@vouch/db/schema";
 
 import type { formSchema } from "~/components/products/create-spaces";
 import { getCurrentUser } from "~/utils/get-current-user";

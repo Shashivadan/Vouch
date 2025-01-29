@@ -2,7 +2,7 @@ import type { SVGProps } from "react";
 import React from "react";
 import { redirect } from "next/navigation";
 
-import { signIn } from "@acme/auth";
+import { signIn } from "@vouch/auth";
 
 import { getCurrentUser } from "~/utils/get-current-user";
 

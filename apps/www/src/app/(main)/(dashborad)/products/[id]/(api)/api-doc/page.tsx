@@ -4,7 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
+} from "@vouch/ui/card";
 import {
   Table,
   TableBody,
@@ -12,7 +12,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@acme/ui/table";
+} from "@vouch/ui/table";
 
 export default function page() {
   return (

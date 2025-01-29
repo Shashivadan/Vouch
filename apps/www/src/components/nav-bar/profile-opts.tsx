@@ -1,7 +1,7 @@
 import React from "react";
 import { UserRound } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@vouch/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,7 +9,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@acme/ui/dropdown-menu";
+} from "@vouch/ui/dropdown-menu";
 
 import SignOutButton from "./sign-out-button";
 

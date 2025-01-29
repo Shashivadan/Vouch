@@ -1,4 +1,4 @@
-import type { organizationTable, testimonialTable } from "@acme/db/schema";
+import type { organizationTable, testimonialTable } from "@vouch/db/schema";
 
 export interface OrganizationTestimonialType {
   id: string;

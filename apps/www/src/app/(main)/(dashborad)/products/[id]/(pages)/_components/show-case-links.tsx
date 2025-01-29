@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { CopyIcon, Eye } from "lucide-react";
 
-import { Button } from "@acme/ui/button";
-import { toast } from "@acme/ui/toast";
+import { Button } from "@vouch/ui/button";
+import { toast } from "@vouch/ui/toast";
 
 export default function ShowCaseLink({
   name,

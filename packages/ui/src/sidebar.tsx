@@ -7,18 +7,18 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import { PanelLeft } from "lucide-react";
 
-import { Button } from "@acme/ui/button";
-import { useIsMobile } from "@acme/ui/hooks/use-mobile";
-import { Input } from "@acme/ui/input";
-import { Separator } from "@acme/ui/separator";
-import { Sheet, SheetContent } from "@acme/ui/sheet";
-import { Skeleton } from "@acme/ui/skeleton";
+import { Button } from "@vouch/ui/button";
+import { useIsMobile } from "@vouch/ui/hooks/use-mobile";
+import { Input } from "@vouch/ui/input";
+import { Separator } from "@vouch/ui/separator";
+import { Sheet, SheetContent } from "@vouch/ui/sheet";
+import { Skeleton } from "@vouch/ui/skeleton";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@acme/ui/tooltip";
+} from "@vouch/ui/tooltip";
 
 import { cn } from "./index";
 

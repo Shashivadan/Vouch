@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card } from "@acme/ui/card";
+import { Card } from "@vouch/ui/card";
 
 import { getTestimonialsLikedDetails } from "~/actions/get-space-testimonials-details";
 import NotFound from "~/components/404-not-found";

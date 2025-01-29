@@ -4,7 +4,7 @@ import React from "react";
 import { useSearchParams } from "next/navigation";
 import { useTheme } from "next-themes";
 
-import { cn } from "@acme/ui";
+import { cn } from "@vouch/ui";
 
 import type { TestimonialType } from "~/types/schema-types";
 import { Marquee } from "./marquee";

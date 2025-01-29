@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { Trophy } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
-import { Badge } from "@acme/ui/badge";
-import { Card, CardContent, CardFooter, CardHeader } from "@acme/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@vouch/ui/avatar";
+import { Badge } from "@vouch/ui/badge";
+import { Card, CardContent, CardFooter, CardHeader } from "@vouch/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -12,7 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
+} from "@vouch/ui/dialog";
 
 import type { TestimonialType } from "~/types";
 import { formatDate } from "~/utils/format-date";

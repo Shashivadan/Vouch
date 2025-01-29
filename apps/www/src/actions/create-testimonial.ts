@@ -3,9 +3,9 @@
 import type { z } from "zod";
 import { revalidatePath } from "next/cache";
 
-import { eq } from "@acme/db";
-import { db } from "@acme/db/client";
-import { organizationTable, testimonialTable } from "@acme/db/schema";
+import { eq } from "@vouch/db";
+import { db } from "@vouch/db/client";
+import { organizationTable, testimonialTable } from "@vouch/db/schema";
 
 import type { testimonialFormSchema } from "~/components/testimonial/create-testimonial-form";
 import { getCurrentUser } from "~/utils/get-current-user";

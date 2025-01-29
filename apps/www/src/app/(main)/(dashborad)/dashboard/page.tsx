@@ -2,8 +2,8 @@ import React from "react";
 import { redirect } from "next/navigation";
 import { FolderKanban, FolderPlus } from "lucide-react";
 
-import { db } from "@acme/db/client";
-import { Card } from "@acme/ui/card";
+import { db } from "@vouch/db/client";
+import { Card } from "@vouch/ui/card";
 
 import { CreateSpaces } from "~/components/products/create-spaces";
 import { ProjectsCard } from "~/components/project-card";

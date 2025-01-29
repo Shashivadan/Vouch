@@ -1,8 +1,8 @@
 import { PlusIcon } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
-import { Button } from "@acme/ui/button";
-import { Card, CardHeader, CardTitle } from "@acme/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@vouch/ui/avatar";
+import { Button } from "@vouch/ui/button";
+import { Card, CardHeader, CardTitle } from "@vouch/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -11,7 +11,7 @@ import {
   DialogOverlay,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
+} from "@vouch/ui/dialog";
 
 import type { OrganizationTestimonialType } from "~/types";
 import { CreateTestimonialForm } from "./create-testimonial-form";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { cn } from "@acme/ui";
+import { cn } from "@vouch/ui";
 
 import type { TestimonialType } from "~/types/schema-types";
 

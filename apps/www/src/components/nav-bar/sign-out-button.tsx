@@ -1,6 +1,6 @@
 import React from "react";
 
-import { signOut } from "@acme/auth";
+import { signOut } from "@vouch/auth";
 
 const SignOutButton = () => {
   return (

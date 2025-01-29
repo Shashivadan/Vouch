@@ -1,6 +1,6 @@
 import { cache } from "react";
 
-import { auth } from "@acme/auth";
+import { auth } from "@vouch/auth";
 
 export const getCurrentUser = cache(async () => {
   const session = await auth();

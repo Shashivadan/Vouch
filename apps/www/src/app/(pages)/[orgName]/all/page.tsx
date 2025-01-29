@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
-import { Button } from "@acme/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@vouch/ui/avatar";
+import { Button } from "@vouch/ui/button";
 
 import { getTestimonialsWithWallOfFameDetails } from "~/actions/get-space-testimonials-details";
 import NotFound from "~/components/404-not-found";

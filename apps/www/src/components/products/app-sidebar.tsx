@@ -26,7 +26,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@acme/ui/sidebar";
+} from "@vouch/ui/sidebar";
 
 // Menu items.
 const InboxStack = [

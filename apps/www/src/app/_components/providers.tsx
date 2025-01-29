@@ -2,8 +2,8 @@
 
 import React from "react";
 
-import { ThemeProvider } from "@acme/ui/theme";
-import { Toaster } from "@acme/ui/toast";
+import { ThemeProvider } from "@vouch/ui/theme";
+import { Toaster } from "@vouch/ui/toast";
 
 import { TRPCReactProvider } from "~/trpc/react";
 

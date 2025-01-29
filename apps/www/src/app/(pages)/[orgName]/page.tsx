@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@vouch/ui/avatar";
 
 import {
   getQuestionsDetails,

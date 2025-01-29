@@ -1,3 +1,3 @@
-import type { eq } from "@acme/db";
+import type { eq } from "@vouch/db";
 
 export type Eq = typeof eq;

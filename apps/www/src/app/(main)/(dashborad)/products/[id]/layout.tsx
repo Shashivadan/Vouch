@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-import { SidebarProvider, SidebarTrigger } from "@acme/ui/sidebar";
+import { SidebarProvider, SidebarTrigger } from "@vouch/ui/sidebar";
 
 import { AppSidebar } from "~/components/products/app-sidebar";
 import { getCurrentUser } from "~/utils/get-current-user";

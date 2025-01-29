@@ -1,8 +1,8 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import { and } from "@acme/db";
-import { db } from "@acme/db/client";
+import { and } from "@vouch/db";
+import { db } from "@vouch/db/client";
 
 export const GET = async (req: NextRequest) => {
   const key = req.nextUrl.searchParams.get("key");

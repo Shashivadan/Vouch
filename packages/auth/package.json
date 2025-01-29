@@ -1,5 +1,5 @@
 {
-  "name": "@acme/auth",
+  "name": "@vouch/auth",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -18,10 +18,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@acme/db": "workspace:*",
     "@auth/core": "0.34.2",
     "@auth/drizzle-adapter": "1.4.2",
     "@t3-oss/env-nextjs": "^0.11.1",
+    "@vouch/db": "workspace:*",
     "next": "^14.2.15",
     "next-auth": "5.0.0-beta.20",
     "react": "catalog:react18",
@@ -29,12 +29,12 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
+    "@vouch/eslint-config": "workspace:*",
+    "@vouch/prettier-config": "workspace:*",
+    "@vouch/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@vouch/prettier-config"
 }

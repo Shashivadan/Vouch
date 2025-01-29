@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { cn } from "@acme/ui";
+import { cn } from "@vouch/ui";
 
 export const ToggleTheme = () => {
   const [theme, setTheme] = React.useState<"light" | "dark">("light");

@@ -3,8 +3,8 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "next-themes";
 
-import { cn } from "@acme/ui";
-import { Toaster } from "@acme/ui/toast";
+import { cn } from "@vouch/ui";
+import { Toaster } from "@vouch/ui/toast";
 
 import { TRPCReactProvider } from "~/trpc/react";
 

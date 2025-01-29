@@ -7,7 +7,7 @@ import { Loader2, Star } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@vouch/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -15,7 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
+} from "@vouch/ui/dialog";
 import {
   Form,
   FormControl,
@@ -24,10 +24,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@acme/ui/form";
-import { Input } from "@acme/ui/input";
-import { Textarea } from "@acme/ui/textarea";
-import { toast } from "@acme/ui/toast";
+} from "@vouch/ui/form";
+import { Input } from "@vouch/ui/input";
+import { Textarea } from "@vouch/ui/textarea";
+import { toast } from "@vouch/ui/toast";
 
 import type { OrganizationType } from "~/types";
 import { createRequestTestimonial } from "~/actions/create-request-testimonial";

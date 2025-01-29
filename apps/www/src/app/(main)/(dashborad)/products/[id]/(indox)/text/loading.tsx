@@ -1,4 +1,4 @@
-import { Card } from "@acme/ui/card";
+import { Card } from "@vouch/ui/card";
 
 import { TestimonialSkeleton } from "../all/loading";
 

@@ -1,7 +1,7 @@
 import { CheckCircle } from "lucide-react";
 
-import { Badge } from "@acme/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@acme/ui/card";
+import { Badge } from "@vouch/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@vouch/ui/card";
 
 export default function AboutPage() {
   const sentences = [

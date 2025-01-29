@@ -3,8 +3,8 @@
 import React from "react";
 import { Copy } from "lucide-react";
 
-import { Button } from "@acme/ui/button";
-import { toast } from "@acme/ui/toast";
+import { Button } from "@vouch/ui/button";
+import { toast } from "@vouch/ui/toast";
 
 import type { OrganizationType } from "~/types";
 

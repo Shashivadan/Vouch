@@ -3,7 +3,7 @@
 import * as React from "react";
 import { ThemeProvider, useTheme } from "next-themes";
 
-import { cn } from "@acme/ui";
+import { cn } from "@vouch/ui";
 
 function ThemeToggle() {
   const { setTheme, theme } = useTheme();
