@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import NextTopLoader from "nextjs-toploader";
 
 import { cn } from "@vouch/ui";
 
@@ -73,6 +74,7 @@ export default function RootLayout({
           GeistMono.variable,
         )}
       >
+        <NextTopLoader color="#9333ea" height={2} />
         <Providers>
           <main className="">{children}</main>
         </Providers>
