@@ -18,9 +18,11 @@ export default function LikeButton({ data }: { data: TestimonialType }) {
 
   const mutation = api.likeTestimonials.like.useMutation({
     onSuccess: (data) => {
-      toast.success(
-        `Testimonial ${(data.result as unknown as TestimonialType).wallOfFame ? "liked" : "unLiked"}`,
-      );
+      if (data.result) {
+        toast.success(
+          `Testimonial ${data.result[0].wallOfFame ? "liked" : "unLiked"}`,
+        );
+      }
       router.refresh();
     },
     onError: (error: unknown) => {

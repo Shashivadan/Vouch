@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import { and } from "@vouch/db";
+import { and, desc } from "@vouch/db";
 import { db } from "@vouch/db/client";
 
 export const GET = async (req: NextRequest) => {
@@ -18,6 +18,19 @@ export const GET = async (req: NextRequest) => {
           eq(testimonialTable.wallOfFame, true),
           eq(testimonialTable.organizationId, key),
         ),
+      orderBy: (testimonialTable) => [desc(testimonialTable.createdAt)],
+      columns: {
+        id: true,
+        createdAt: true,
+        authorName: true,
+        authorEmail: true,
+        wallOfFame: true,
+        message: true,
+        profileImages: true,
+        reviewImages: true,
+        type: true,
+        rating: true,
+      },
     });
 
     return NextResponse.json({

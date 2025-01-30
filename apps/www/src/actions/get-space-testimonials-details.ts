@@ -54,6 +54,7 @@ export const getSpaceTestimonialsDetails = async (orgName: string) => {
           eq(organizationTable.organizationName, orgName),
           eq(organizationTable.ownerId, user.id),
         ),
+      orderBy: (organizationTable) => [desc(organizationTable.createdAt)],
       with: {
         testimonials: {
           orderBy: (testimonials: TestimonialTableType) => [
@@ -73,7 +74,6 @@ export const getSpaceTestimonialsDetails = async (orgName: string) => {
     return (error as Error).message;
   }
 };
-
 export const getTestimonialsLikedDetails = async (orgName: string) => {
   const user = await getCurrentUser();
 
@@ -88,6 +88,7 @@ export const getTestimonialsLikedDetails = async (orgName: string) => {
           eq(organizationTable.organizationName, orgName),
           eq(organizationTable.ownerId, user.id),
         ),
+      orderBy: (organizationTable) => [desc(organizationTable.createdAt)],
       with: {
         testimonials: {
           where: (testimonialsTable: TestimonialTableType) =>
@@ -126,6 +127,7 @@ export const getTestimonialsWithTextOnlyDetails = async (orgName: string) => {
           eq(organizationTable.organizationName, orgName),
           eq(organizationTable.ownerId, user.id),
         ),
+      orderBy: (organizationTable) => [desc(organizationTable.createdAt)],
       with: {
         testimonials: {
           where: (testimonialsTable: TestimonialTableType) =>
