@@ -1,6 +1,12 @@
 import { redirect } from "next/navigation";
 
-import { Feature, Footer, Hero, Workflow } from "~/components/landing";
+import {
+  Feature,
+  Footer,
+  Hero,
+  ImageShowcase,
+  Workflow,
+} from "~/components/landing";
 import { getCurrentUser } from "~/utils/get-current-user";
 
 export default async function HomePage() {
@@ -12,6 +18,7 @@ export default async function HomePage() {
   return (
     <main className="p-2 md:p-0">
       <Hero />
+      <ImageShowcase />
       <Workflow />
       <Feature />
       <Footer />
