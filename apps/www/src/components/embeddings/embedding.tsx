@@ -22,7 +22,7 @@ export default function Embedding({ website }: { website: string }) {
   const [showEmbed, setShowEmbed] = useState<boolean>(true);
 
   const embedCode = `<iframe
-  src="http://localhost:3001/m/${website}"
+  src="https://vouch-qifm.vercel.app/m/${website}"
   width="1000px"
   height="500px"
   style={{
@@ -55,12 +55,12 @@ export default function Embedding({ website }: { website: string }) {
               </div>
               {showEmbed && (
                 <iframe
-                  src={`http://localhost:3001/m/${website}`}
+                  src={`https://vouch-qifm.vercel.app/m/${website}`}
                   width="100%"
                   height="610px"
                   style={{
                     border: "none",
-                    borderRadius: "10px",
+                    borderRadius: "15px",
                     backgroundColor: "white",
                   }}
                 />
@@ -78,10 +78,6 @@ export default function Embedding({ website }: { website: string }) {
                     appear
                   </li>
                   <li>Adjust the width and height as needed</li>
-                  <li>
-                    Replace 'http://localhost:3001' with your actual domain if
-                    different
-                  </li>
                 </ol>
               </div>
             </TabsContent>
